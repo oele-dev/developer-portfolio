@@ -10,16 +10,16 @@ function BlogCard({ blog }) {
   return (
     <div className="border border-[#1d293a] hover:border-[#464c6a] transition-all duration-500 bg-[#1b203e] rounded-lg relative group"
     >
-      <div className="h-44 lg:h-52 w-auto cursor-pointer overflow-hidden rounded-t-lg">
+      <div className="w-auto overflow-hidden rounded-t-lg cursor-pointer h-44 lg:h-52">
         <Image
           src={blog?.cover_image}
           height={1080}
           width={1920}
           alt=""
-          className='h-full w-full group-hover:scale-110 transition-all duration-300'
+          className='w-full h-full transition-all duration-300 group-hover:scale-110'
         />
       </div>
-      <div className="p-2 sm:p-3 flex flex-col">
+      <div className="flex flex-col p-2 sm:p-3">
         <div className="flex justify-between items-center text-[#16f2b3] text-sm">
           <p>{timeConverter(blog.published_at)}</p>
           <div className="flex items-center gap-3">
@@ -36,7 +36,7 @@ function BlogCard({ blog }) {
           </div>
         </div>
         <Link target='_blank' href={blog.url}>
-          <p className='my-2 lg:my-3 cursor-pointer text-lg text-white sm:text-xl font-medium hover:text-violet-500'>
+          <p className='my-2 text-lg font-medium text-white cursor-pointer lg:my-3 sm:text-xl hover:text-violet-500'>
             {blog.title}
           </p>
         </Link>
