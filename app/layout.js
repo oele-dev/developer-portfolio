@@ -7,6 +7,7 @@ import Navbar from './components/navbar';
 import './css/card.scss';
 import './css/globals.scss';
 const inter = Inter({ subsets: ['latin'] });
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata = {
   title: 'Portfolio of Osmell Caicedo',
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
         <Footer />
       </body>
       <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM} />
+      <SpeedInsights />
     </html>
   )
 };
