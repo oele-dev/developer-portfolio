@@ -4,10 +4,9 @@ import { personalData } from "@/utils/data/personal-data";
 import Image from "next/image";
 import Link from "next/link";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
-import { FaFacebook, FaTwitterSquare } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { MdDownload } from "react-icons/md";
 import { RiContactsFill } from "react-icons/ri";
-import { SiLeetcode } from "react-icons/si";
 
 function HeroSection() {
   return (
@@ -34,6 +33,20 @@ function HeroSection() {
 
           <div className="flex items-center gap-5 my-12">
             <Link
+              href={personalData.twitter}
+              target='_blank'
+              className="text-pink-500 transition-all duration-300 hover:scale-125"
+            >
+              <FaXTwitter size={30} />
+            </Link>
+            <Link
+              href={personalData.pinkary}
+              target='_blank'
+              className="text-pink-500 transition-all duration-300 hover:scale-125"
+            >
+              <Image src="/svg/pinkary.svg" alt="Pinkary" width={30} height={30} className="rounded" />
+            </Link>
+            <Link
               href={personalData.github}
               target='_blank'
               className="text-pink-500 transition-all duration-300 hover:scale-125"
@@ -46,13 +59,6 @@ function HeroSection() {
               className="text-pink-500 transition-all duration-300 hover:scale-125"
             >
               <BsLinkedin size={30} />
-            </Link>
-            <Link
-              href={personalData.twitter}
-              target='_blank'
-              className="text-pink-500 transition-all duration-300 hover:scale-125"
-            >
-              <FaTwitterSquare size={30} />
             </Link>
           </div>
 
