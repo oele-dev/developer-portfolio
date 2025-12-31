@@ -7,7 +7,7 @@ export const projectsData = [
     {
         id: 1,
         name: 'My FAB',
-        description: "Web application developed with VILT Stack, allows to design rainwater gutters according to the parts and length of the design.",
+        description: "Web application developed with VILT Stack, allows to design rainwater gutters according to the parts and length of the design. Built using AI-assisted development workflows with Claude Code and Cursor for enhanced code quality.",
         tools: ['Laravel', 'Inertia JS', 'Vue', 'MySQL', 'Node Mailer', 'Puppeteer', 'Nginx'],
         role: 'Full Stack Developer',
         code: '',
@@ -17,7 +17,7 @@ export const projectsData = [
     {
         id: 2,
         name: 'Google Workspace And Laravel integration',
-        description: 'I developed and implemented a PHP package that allowed the integration of Google Workspace services, such as Google Meet, Google Classroom, Calendar and Workspace Accounts, with a Laravel applications. This facilitated communication and data exchange between Laravel applications and Google Workspace services.',
+        description: 'I developed and implemented a PHP package that allowed the integration of Google Workspace services, such as Google Meet, Google Classroom, Calendar and Workspace Accounts, with a Laravel applications. This facilitated communication and data exchange between Laravel applications and Google Workspace services. Accelerated development using LLM-powered coding assistants.',
         tools: ['Laravel', 'Tailwind CSS', "Google Workspace", "VueJS", "MySQL", "Gmail Passkey"],
         role: 'Full Stack Developer',
         code: '',

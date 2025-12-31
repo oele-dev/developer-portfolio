@@ -103,15 +103,21 @@ function HeroSection() {
                 <span className="text-gray-400">{`['`}</span>
                 <span className="text-amber-300">Laravel</span>
                 <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Vue</span>
+                <span className="text-amber-300">Livewire</span>
+                <span className="text-gray-400">{"', '"}</span>
+                <span className="text-amber-300">Filament PHP</span>
+                <span className="text-gray-400">{"', '"}</span>
+                <span className="text-amber-300">Nova</span>
                 <span className="text-gray-400">{"', '"}</span>
                 <span className="text-amber-300">Inertia JS</span>
                 <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Wordpress</span>
+                <span className="text-amber-300">Vue</span>
+                <span className="text-gray-400">{"', '"}</span>
+                <span className="text-amber-300">React</span>
                 <span className="text-gray-400">{"', '"}</span>
                 <span className="text-amber-300">MySql</span>
                 <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">MongoDB</span>
+                <span className="text-amber-300">PostgreSQL</span>
                 <span className="text-gray-400">{"', '"}</span>
                 <span className="text-amber-300">Docker</span>
                 <span className="text-gray-400">{"', '"}</span>
@@ -125,6 +131,11 @@ function HeroSection() {
               </div>
               <div>
                 <span className="ml-4 mr-2 text-white lg:ml-8">quickLearner:</span>
+                <span className="text-orange-400">true</span>
+                <span className="text-gray-400">,</span>
+              </div>
+              <div>
+                <span className="ml-4 mr-2 text-white lg:ml-8">AI-assisted:</span>
                 <span className="text-orange-400">true</span>
                 <span className="text-gray-400">,</span>
               </div>
@@ -154,9 +165,14 @@ function HeroSection() {
               </div>
               <div>
                 <span className="ml-12 lg:ml-24 text-cyan-400">this.</span>
+                <span className="mr-2 text-white">AI-assisted</span>
+                <span className="text-amber-300">&amp;&amp;</span>
+              </div>
+              <div>
+                <span className="ml-12 lg:ml-24 text-cyan-400">this.</span>
                 <span className="mr-2 text-white">skills.length</span>
                 <span className="mr-2 text-amber-300">&gt;=</span>
-                <span className="text-orange-400">5</span>
+                <span className="text-orange-400">9</span>
               </div>
               <div><span className="ml-8 mr-2 text-gray-400 lg:ml-16">{`);`}</span></div>
               <div><span className="ml-4 text-gray-400 lg:ml-8">{`};`}</span></div>
