@@ -1,6 +1,9 @@
 const path = require('path')
+const createNextIntlPlugin = require('next-intl/plugin');
 
-module.exports = {
+const withNextIntl = createNextIntlPlugin('./i18n/request.js');
+
+module.exports = withNextIntl({
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
@@ -10,4 +13,13 @@ module.exports = {
   compiler: {
     styledComponents: true,
   },
-}
+  async redirects() {
+    return [
+      {
+        source: '/mkdn',
+        destination: 'https://github.com/oele-dev/mkdn',
+        permanent: false,
+      },
+    ];
+  },
+});
