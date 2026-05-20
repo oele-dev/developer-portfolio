@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "title": "Osmell Caicedo — Senior Laravel Engineer · Indie Maker · Mentor",
+    "description": "Senior Laravel engineer with 10+ years building multi-tenant products, Filament admin panels, and serious API integrations. AI-augmented since 2023. Available for remote contracts from Bogotá."
+  },
+  "nav": {
+    "work": "WORK",
+    "experience": "EXPERIENCE",
+    "about": "ABOUT",
+    "contact": "CONTACT",
+    "resume": "RÉSUMÉ"
+  },
+  "hero": {
+    "eyebrow": "Osmell Caicedo",
+    "headline": "Senior Laravel engineer.",
+    "headlineItalic": "Indie maker.",
+    "tagline": "Shipping web products from Bogotá since 2014.",
+    "ctaPrimary": "Book a 30-min call",
+    "ctaSecondary": "Read the résumé",
+    "caption": "OSMELL CAICEDO · BOGOTÁ, CO · MMXXVI"
+  },
+  "shipping": {
+    "label": "01 — CURRENTLY SHIPPING",
+    "title": "Ultti",
+    "subtitle": "Multi-tenant WhatsApp commerce for LATAM",
+    "description": "A platform for delivery businesses (liquor stores, dark kitchens, pharmacies). Each tenant gets a branded catalog under {slug}.ultti.co, a WhatsApp checkout, an operator panel and per-tenant payment methods (Nequi, Daviplata, Bre-B). Single Supabase backend with RLS scoped per business.",
+    "metricValue": "2",
+    "metricUnit": "tenants live",
+    "cta": "See ultti.co →"
+  },
+  "work": {
+    "label": "02 — SELECTED WORK",
+    "intro": "Seven projects across products, packages and integrations."
+  },
+  "experience": {
+    "label": "03 — EXPERIENCE",
+    "intro": "Ten years across Laravel teams in Colombia, Malta and the US."
+  },
+  "about": {
+    "label": "04 — ABOUT",
+    "pullQuote": "I build the boring parts well so the interesting parts get a chance.",
+    "body": "I'm a software engineer with ten years of experience in the Laravel ecosystem (TALL & VILT) and, more recently, Next.js and Astro. I specialize in multi-tenant applications, Filament admin panels, serious API integrations (Google Workspace, QuickBooks, Hotmart, MikroTik, n8n) and programmatic SEO at scale.\n\nI've worked with US companies (Level60 Consulting · Nashville, EyeUniversal · San José) and led the technical team at Ovy.so for five years, migrating a PHP monolith to Laravel + Vue/Inertia, building a PWA, and shipping a Google Workspace integration.\n\nNow I split my time between client contracts and shipping my own products (Ultti, Malta Pharmacy Empire, mkdn). I use Claude Code and Cursor as part of my daily workflow — they're tools, not authors.\n\nAvailable for remote contracts, Laravel performance audits, and product collaborations."
+  },
+  "contact": {
+    "label": "05 — CONTACT",
+    "blurb": "Open to remote contracts and product collaborations. I usually reply within 24 hours.",
+    "formName": "Your name",
+    "formEmail": "Your email",
+    "formMessage": "What's on your mind?",
+    "formSubmit": "Send",
+    "formSuccess": "Got it. I'll reply within 24h.",
+    "formError": "Something broke. Email me directly."
+  },
+  "footer": {
+    "shipping": "SHIPPING FROM BOGOTÁ",
+    "available": "AVAILABLE FOR REMOTE WORK"
+  }
+}

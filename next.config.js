@@ -1,11 +1,14 @@
-const path = require('path')
+const path = require('path');
+const createNextIntlPlugin = require('next-intl/plugin');
+const withNextIntl = createNextIntlPlugin('./i18n.js');
 
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
   images: {
-    domains: ['res.cloudinary.com', 'media.dev.to']
+    domains: ['res.cloudinary.com', 'media.dev.to'],
   },
   compiler: {
     styledComponents: true,
@@ -19,4 +22,6 @@ module.exports = {
       },
     ];
   },
-}
+};
+
+module.exports = withNextIntl(nextConfig);

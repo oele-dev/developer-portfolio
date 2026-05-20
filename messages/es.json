@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "title": "Osmell Caicedo — Senior Laravel Engineer · Indie Maker · Mentor",
+    "description": "Ingeniero Laravel senior con +10 años construyendo productos multi-tenant, paneles con Filament e integraciones de API. AI-augmented desde 2023. Disponible para contratos remotos desde Bogotá."
+  },
+  "nav": {
+    "work": "PROYECTOS",
+    "experience": "EXPERIENCIA",
+    "about": "SOBRE MÍ",
+    "contact": "CONTACTO",
+    "resume": "CV"
+  },
+  "hero": {
+    "eyebrow": "Osmell Caicedo",
+    "headline": "Ingeniero Laravel senior.",
+    "headlineItalic": "Indie maker.",
+    "tagline": "Construyo productos web desde Bogotá desde 2014.",
+    "ctaPrimary": "Agenda una llamada de 30 min",
+    "ctaSecondary": "Ver el CV",
+    "caption": "OSMELL CAICEDO · BOGOTÁ, CO · MMXXVI"
+  },
+  "shipping": {
+    "label": "01 — EN PRODUCCIÓN",
+    "title": "Ultti",
+    "subtitle": "Comercio WhatsApp multi-tenant para LATAM",
+    "description": "Plataforma para negocios de domicilio en LATAM (licorerías, cocinas ocultas, farmacias). Cada tenant tiene catálogo bajo {slug}.ultti.co, checkout por WhatsApp, panel de operador y métodos de pago por tenant (Nequi, Daviplata, Bre-B). Un solo backend en Supabase con RLS por negocio.",
+    "metricValue": "2",
+    "metricUnit": "tenants en producción",
+    "cta": "Ver ultti.co →"
+  },
+  "work": {
+    "label": "02 — PROYECTOS SELECCIONADOS",
+    "intro": "Siete proyectos entre productos, paquetes e integraciones."
+  },
+  "experience": {
+    "label": "03 — EXPERIENCIA",
+    "intro": "Diez años en equipos Laravel entre Colombia, Malta y los Estados Unidos."
+  },
+  "about": {
+    "label": "04 — SOBRE MÍ",
+    "pullQuote": "Hago bien la parte aburrida para que la parte interesante tenga oportunidad.",
+    "body": "Soy ingeniero de software con diez años de experiencia en el ecosistema Laravel (TALL & VILT) y, más recientemente, en Next.js y Astro. Me especializo en aplicaciones multi-tenant, paneles administrativos con Filament, integraciones de API serias (Google Workspace, QuickBooks, Hotmart, MikroTik, n8n) y SEO programático a escala.\n\nHe trabajado con empresas de EE.UU. (Level60 Consulting · Nashville, EyeUniversal · San José) y lideré el equipo técnico de Ovy.so durante cinco años, migrando un monolito en PHP a Laravel + Vue/Inertia, construyendo una PWA e integrando Google Workspace.\n\nAhora divido el tiempo entre contratos de cliente y mis propios productos (Ultti, Malta Pharmacy Empire, mkdn). Uso Claude Code y Cursor en mi flujo diario — son herramientas, no autores.\n\nDisponible para contratos remotos, auditorías de performance en Laravel y colaboraciones de producto."
+  },
+  "contact": {
+    "label": "05 — CONTACTO",
+    "blurb": "Disponible para contratos remotos y colaboraciones de producto. Suelo responder en menos de 24 horas.",
+    "formName": "Tu nombre",
+    "formEmail": "Tu correo",
+    "formMessage": "¿En qué estás pensando?",
+    "formSubmit": "Enviar",
+    "formSuccess": "Listo. Te respondo en menos de 24h.",
+    "formError": "Algo falló. Escríbeme directo."
+  },
+  "footer": {
+    "shipping": "ENVIANDO DESDE BOGOTÁ",
+    "available": "DISPONIBLE PARA TRABAJO REMOTO"
+  }
+}
