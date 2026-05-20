@@ -84,21 +84,12 @@ export async function generateMetadata({ params: { locale } }) {
       siteName: 'Osmell Caicedo',
       title: messages.meta.title,
       description: messages.meta.description,
-      images: [
-        {
-          url: '/oele.dev_.png',
-          width: 1200,
-          height: 630,
-          alt: 'Osmell Caicedo — Senior Laravel Engineer',
-        },
-      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: messages.meta.title,
       description: messages.meta.description,
       creator: '@oele_dev',
-      images: ['/oele.dev_.png'],
     },
     alternates: {
       canonical: 'https://oele.dev',
