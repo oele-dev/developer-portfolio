@@ -1,18 +1,25 @@
 export const personalData = {
-  name: "Osmell",
+  name: 'Osmell',
   profile: '/profile.png',
-  designation: "Software Engineer",
-  description: "My name is Osmell 🖖. I am a professional and enthusiastic programmer in my daily life. I am a quick learner with a self-learning attitude. I love to learn and explore new technologies and am passionate about problem-solving. I leverage AI-assisted development tools including Claude Code, Cursor, and ChatGPT to enhance productivity and code quality. I love almost all the stacks of web application development and love to make the web more open to the world. I am available for any kind of job opportunity that suits my skills and interests.",
-  email: 'hola[at]oele.dev',
+  designation: {
+    en: 'Senior Laravel Engineer · Indie Maker',
+    es: 'Senior Laravel Engineer · Indie Maker',
+  },
+  description: {
+    en: "Software engineer with 10+ years building web products on the Laravel ecosystem (TALL & VILT) and, more recently, Next.js and Astro. I specialize in multi-tenant applications, Filament admin panels, serious API integrations (Google Workspace, QuickBooks, Hotmart, MikroTik, n8n) and programmatic SEO at scale. Available for remote contracts, performance audits and projects where moving the business forward matters more than the stack.",
+    es: 'Ingeniero de software con +10 años construyendo productos web sobre el ecosistema Laravel (TALL & VILT) y, más recientemente, sobre Next.js y Astro. Me especializo en aplicaciones multi-tenant, paneles administrativos con Filament, integraciones de APIs (Google Workspace, QuickBooks, Hotmart, MikroTik, n8n) y sitios programáticos de SEO a escala. Disponible para contratos remotos, auditorías de performance y proyectos donde mover el negocio importe más que el stack.',
+  },
+  email: 'hola@oele.dev',
   phone: '',
-  address: 'Colombia',
+  address: 'Bogotá, Colombia · Remote',
   github: 'https://github.com/oele-dev',
   facebook: '',
   linkedIn: 'https://www.linkedin.com/in/oele-dev/',
   twitter: 'https://twitter.com/oele_dev',
+  youtube: 'https://youtube.com/@oele-dev',
   pinkary: 'https://pinkary.com/@oele_dev',
   stackOverflow: '',
-  leetcode: "",
-  devUsername: "oele-dev",
-  resume: "https://drive.google.com/file/d/12u8O0nGnRbQDoxpcI5l2SBqZDqbgmouc/view?usp=sharing"
-}
+  leetcode: '',
+  devUsername: 'oele-dev',
+  resume: 'https://drive.google.com/file/d/12u8O0nGnRbQDoxpcI5l2SBqZDqbgmouc/view?usp=sharing',
+};

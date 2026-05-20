@@ -1,22 +1,41 @@
-// @flow strict
-import Link from 'next/link';
+'use client';
 
-function Footer() {
+import { usePathname } from 'next/navigation';
+
+export default function Footer() {
+  const pathname = usePathname();
+  const locale = pathname.startsWith('/es') ? 'es' : 'en';
+
+  const shipping  = locale === 'es' ? 'ENVIANDO DESDE BOGOTÁ' : 'SHIPPING FROM BOGOTÁ';
+  const available = locale === 'es' ? 'DISPONIBLE PARA TRABAJO REMOTO' : 'AVAILABLE FOR REMOTE WORK';
+
   return (
-    <div className="relative border-t bg-[#0d1224] border-[#353951] text-white">
-      <div className="mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] py-6 lg:py-10">
-        <div className="flex justify-center -z-40">
-          <div className="absolute top-0 h-[1px] w-1/2  bg-gradient-to-r from-transparent via-violet-500 to-transparent"></div>
-        </div>
-        <div className="flex items-center justify-between md:flex-row">
-          <p className="text-sm">
-            © Developer Portfolio of <Link target="_blank" href="https://www.linkedin.com/in/oele-dev" className="text-[#16f2b3]">oele.dev</Link> <span className="text-xs">based on </span><Link target="_blank" href="https://github.com/said7388/developer-portfolio" className="text-xs"> ABU SAID</Link>
+    <footer
+      className="border-t py-10"
+      style={{ borderColor: 'var(--rule)' }}
+    >
+      <div className="max-w-[68rem] mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-6">
+          {/* Left */}
+          <p className="font-mono text-xs tracking-widest text-ink-soft uppercase">
+            {shipping}
           </p>
-          <div />
+
+          {/* Center — Roman numeral year */}
+          <p className="font-display italic text-2xl text-ink text-center">
+            MMXXVI
+          </p>
+
+          {/* Right */}
+          <p className="font-mono text-xs tracking-widest text-ink-soft uppercase md:text-right flex md:justify-end items-center gap-2">
+            <span
+              className="inline-block w-1.5 h-1.5 rounded-full blink-dot"
+              style={{ backgroundColor: 'var(--accent)' }}
+            />
+            {available}
+          </p>
         </div>
       </div>
-    </div >
+    </footer>
   );
-};
-
-export default Footer;
+}
