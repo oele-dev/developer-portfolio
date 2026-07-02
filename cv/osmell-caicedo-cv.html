@@ -249,7 +249,7 @@
   /* ---------- Print ---------- */
   @page {
     size: Letter;
-    margin: 0.5in;
+    margin: 0;
   }
 
   @media print {
@@ -260,9 +260,9 @@
     }
     .page {
       width: auto;
-      min-height: auto;
+      min-height: 100vh;
       margin: 0;
-      padding: 0;
+      padding: 0.5in;
       box-shadow: none;
     }
   }
