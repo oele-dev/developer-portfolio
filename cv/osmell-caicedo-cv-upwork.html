@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Osmell Caicedo — Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Ship Log tokens — mirrored from app/css/globals.scss */
+    --paper:    #f3efe7;
+    --paper-2:  #ebe6dc;
+    --ink:      #0a0a0a;
+    --ink-soft: #3d3d3d;
+    --rule:     #1a1a1a;
+    --accent:   #ff4500;
+
+    --font-display: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+    --font-body:    'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    --font-mono:    'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+    --page-width:  8.5in;
+    --page-height: 11in;
+    --page-margin: 0.5in;
+  }
+
+  * {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: var(--paper-2);
+    font-family: var(--font-body);
+    color: var(--ink);
+  }
+
+  .page {
+    width: var(--page-width);
+    min-height: var(--page-height);
+    margin: 24px auto;
+    padding: var(--page-margin);
+    background: var(--paper);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+  }
+
+  /* ---------- Header ---------- */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+  }
+
+  .header-left { flex: 1; min-width: 0; }
+
+  .eyebrow {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  .name {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 46px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 0.95;
+    letter-spacing: 0.01em;
+  }
+
+  .subtitle {
+    margin: 4px 0 0;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-soft);
+    line-height: 1.1;
+  }
+
+  .header-right {
+    text-align: right;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    white-space: nowrap;
+  }
+
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3px 10px;
+    margin-top: 16px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .contact-sep { color: var(--accent); }
+
+  .header-rule {
+    height: 1px;
+    background: var(--rule);
+    margin: 16px 0 24px;
+  }
+
+  /* ---------- Columns ---------- */
+  .columns {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    gap: 30px;
+  }
+
+  .col-left, .col-right { min-width: 0; }
+
+  .section { margin-bottom: 30px; }
+  .section:last-child { margin-bottom: 0; }
+
+  .section-title {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin: 0 0 15px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 7px;
+  }
+
+  .section-title .num { color: var(--accent); }
+
+  /* ---------- Entries (experience / education) ---------- */
+  .entry { margin-bottom: 18px; }
+  .entry:last-child { margin-bottom: 0; }
+
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .entry-title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+
+  .entry-dates {
+    flex-shrink: 0;
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+
+  .entry-meta {
+    margin: 4px 0 7px;
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .entry-desc {
+    margin: 0;
+    font-size: 11.5px;
+    line-height: 1.75;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Projects ---------- */
+  .project { margin-bottom: 17px; }
+  .project:last-child { margin-bottom: 0; }
+
+  .project-title {
+    margin: 0 0 5px;
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.15;
+  }
+
+  .project-desc {
+    margin: 0;
+    font-size: 11.5px;
+    line-height: 1.75;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Skills ---------- */
+  .skill-group { margin-bottom: 13px; }
+  .skill-group:last-child { margin-bottom: 0; }
+
+  .skill-label {
+    margin: 0 0 3px;
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .skill-list {
+    margin: 0;
+    font-size: 11px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Print ---------- */
+  @page {
+    size: Letter;
+    margin: 0;
+  }
+
+  @media print {
+    body {
+      background: var(--paper);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      width: auto;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0.5in;
+      box-shadow: none;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="header-left">
+        <span class="eyebrow">+ Curriculum Vitae</span>
+        <h1 class="name">Osmell Caicedo</h1>
+        <p class="subtitle">Senior Laravel Engineer · Indie Maker</p>
+        <div class="contact-row">
+          <span>Bogotá, Colombia (Remote)</span>
+          <span class="contact-sep">·</span>
+          <span>Available via Upwork</span>
+        </div>
+      </div>
+      <div class="header-right">
+        AI-Augmented<br>Workflow<br>MMXXVI
+      </div>
+    </header>
+
+    <div class="header-rule"></div>
+
+    <div class="columns">
+      <div class="col-left">
+        <section class="section">
+          <h2 class="section-title"><span class="num">01</span> — Experience</h2>
+
+          <div class="entry">
+            <div class="entry-head">
+              <h3 class="entry-title">Senior Software Engineer</h3>
+              <span class="entry-dates">Sep 2024 – Present</span>
+            </div>
+            <p class="entry-meta">Level60 Consulting · Nashville, TN (Remote)</p>
+            <p class="entry-desc">Ship features across a portfolio of Laravel applications, focusing on performance and maintainability. Introduced Filament as the admin layer on several projects, contributed to Next.js/TypeScript frontends and CI/CD. Work in an AI-augmented workflow — Claude Code and Cursor for implementation, refactors and test scaffolding — pairing AI speed with rigorous human review to ship faster without lowering quality.</p>
+          </div>
+
+          <div class="entry">
+            <div class="entry-head">
+              <h3 class="entry-title">Senior Software Engineer</h3>
+              <span class="entry-dates">Feb 2022 – Apr 2024</span>
+            </div>
+            <p class="entry-meta">EyeUniversal LLC · San José, CA (Remote)</p>
+            <p class="entry-desc">Built Laravel web apps and e-commerce stores (WooCommerce, WordPress, Shopify) for US clients. Owned full delivery: requirements → architecture → deploy.</p>
+          </div>
+
+          <div class="entry">
+            <div class="entry-head">
+              <h3 class="entry-title">Lead Developer</h3>
+              <span class="entry-dates">Jul 2017 – May 2022</span>
+            </div>
+            <p class="entry-meta">Ovy.so · Colombia</p>
+            <p class="entry-desc">Led the technical team migrating a PHP monolith to Laravel + Vue/Inertia on Docker. Shipped GitLab Flow, Conventional Commits and Continuous Delivery, an offline PWA, and a Google Workspace integration.</p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="num">03</span> — Skills</h2>
+
+          <div class="skill-group">
+            <h4 class="skill-label">Backend & Reliability</h4>
+            <p class="skill-list">Laravel Ecosystem (TALL/VILT), PHP, MySQL debugging, Redis, Queues/Jobs, Laravel Horizon, REST & Webhook integrations, Multi-tenant</p>
+          </div>
+
+          <div class="skill-group">
+            <h4 class="skill-label">Frontend</h4>
+            <p class="skill-list">Next.js, TypeScript, Vue/Inertia, Livewire, Alpine.js, Tailwind, Astro</p>
+          </div>
+
+          <div class="skill-group">
+            <h4 class="skill-label">Workflow & Practices</h4>
+            <p class="skill-list">CI/CD, GitLab Flow, Conventional Commits, Scrum, MVC, SOLID, KISS, TDD</p>
+          </div>
+
+          <div class="skill-group">
+            <h4 class="skill-label">AI-Augmented Development</h4>
+            <p class="skill-list">Claude Code, Cursor, MCP, spec-driven prompting, AI-assisted debugging & refactors, review-gated delivery</p>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-right">
+        <section class="section">
+          <h2 class="section-title"><span class="num">02</span> — Projects</h2>
+
+          <div class="project">
+            <h3 class="project-title">QuickBooks + Hotmart Integration — Praxis Studio</h3>
+            <p class="project-desc">Lead Developer on a billing automation product integrating QuickBooks + Hotmart APIs. Hotmart webhooks land on Redis-backed queued jobs monitored with Horizon — idempotent, retry-safe so no purchase is ever double-invoiced. TALL stack + Filament operator panel, MySQL.</p>
+          </div>
+
+          <div class="project">
+            <h3 class="project-title">Google Workspace ↔ Laravel Integration</h3>
+            <p class="project-desc">Authored a PHP package integrating Google Workspace (Meet, Classroom, Calendar, Accounts) with Laravel via OAuth2. Powered virtual classrooms with one-click Meet, calendar events and passwordless sign-in. Used in production.</p>
+          </div>
+
+          <div class="project">
+            <h3 class="project-title">Ultti — Multi-Tenant Delivery Platform (Solopreneur)</h3>
+            <p class="project-desc">Solopreneur SaaS for LATAM delivery businesses. Each tenant gets a branded catalog under {slug}.ultti.co, WhatsApp checkout, operator panel and per-tenant payments (Nequi, Daviplata, Bre-B). Single Supabase backend with RLS scoped per business.</p>
+          </div>
+
+          <div class="project">
+            <h3 class="project-title">Malta Pharmacy Empire — Programmatic SEO (Solopreneur)</h3>
+            <p class="project-desc">High-performance pharmacy directory: 800+ static pages generated at build from SQLite → JSON. JSON-LD schemas, sitemaps, PWA, zero runtime DB — maximum Core Web Vitals. Built with Next.js 15 + TypeScript.</p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="num">04</span> — Education</h2>
+
+          <div class="entry">
+            <div class="entry-head">
+              <h3 class="entry-title">Associate's Degree, Software Analysis & Development (ADSO)</h3>
+              <span class="entry-dates">2009–2011</span>
+            </div>
+            <p class="entry-meta">SENA (Servicio Nacional de Aprendizaje) · Colombia</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
