@@ -6,8 +6,8 @@ export const personalData = {
     es: 'Senior Laravel Engineer · Indie Maker',
   },
   description: {
-    en: "Software engineer with 10+ years building web products on the Laravel ecosystem (TALL & VILT) and, more recently, Next.js and Astro. I specialize in multi-tenant applications, Filament admin panels, serious API integrations (Google Workspace, QuickBooks, Hotmart, MikroTik, n8n) and programmatic SEO at scale. Available for remote contracts, performance audits and projects where moving the business forward matters more than the stack.",
-    es: 'Ingeniero de software con +10 años construyendo productos web sobre el ecosistema Laravel (TALL & VILT) y, más recientemente, sobre Next.js y Astro. Me especializo en aplicaciones multi-tenant, paneles administrativos con Filament, integraciones de APIs (Google Workspace, QuickBooks, Hotmart, MikroTik, n8n) y sitios programáticos de SEO a escala. Disponible para contratos remotos, auditorías de performance y proyectos donde mover el negocio importe más que el stack.',
+    en: "Software engineer with 10+ years building web products on the Laravel ecosystem (TALL & VILT) and, more recently, Next.js and Astro. I specialize in multi-tenant applications, Filament admin panels, serious API integrations (Google Workspace, QuickBooks, Hotmart, MikroTik, n8n) backed by reliable queues/jobs on Redis and Horizon, and programmatic SEO at scale. Available for remote contracts, performance audits and projects where moving the business forward matters more than the stack.",
+    es: 'Ingeniero de software con +10 años construyendo productos web sobre el ecosistema Laravel (TALL & VILT) y, más recientemente, sobre Next.js y Astro. Me especializo en aplicaciones multi-tenant, paneles administrativos con Filament, integraciones de APIs (Google Workspace, QuickBooks, Hotmart, MikroTik, n8n) respaldadas por queues/jobs confiables sobre Redis y Horizon, y sitios programáticos de SEO a escala. Disponible para contratos remotos, auditorías de performance y proyectos donde mover el negocio importe más que el stack.',
   },
   email: 'hola@oele.dev',
   phone: '',

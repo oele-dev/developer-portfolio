@@ -51,15 +51,15 @@ export const projectsData = [
     demo: '',
     code: '',
     role: 'Lead Full Stack Developer',
-    tools: ['Laravel', 'Livewire', 'Filament', 'Tailwind', 'Alpine.js', 'QuickBooks API', 'Hotmart API', 'MySQL'],
+    tools: ['Laravel', 'Livewire', 'Filament', 'Queues / Horizon', 'Redis', 'QuickBooks API', 'Hotmart API', 'MySQL'],
     metric: null,
     name: {
       en: 'QuickBooks + Hotmart Billing Automation',
       es: 'Automatización de Facturación QuickBooks + Hotmart',
     },
     description: {
-      en: 'Billing automation product that integrates QuickBooks and Hotmart APIs to invoice digital purchases automatically. Built end-to-end on the TALL stack with Filament PHP as the operator panel.',
-      es: 'Producto de automatización de facturación que integra las APIs de QuickBooks y Hotmart para facturar compras digitales de forma automática. Construido de punta a punta en el stack TALL con Filament PHP como panel de operador.',
+      en: 'Billing automation product that integrates QuickBooks and Hotmart APIs to invoice digital purchases automatically. Hotmart webhooks land on queued jobs processed through Redis and monitored with Horizon — idempotent, retry-safe billing so no purchase is ever double-invoiced. Built end-to-end on the TALL stack with Filament PHP as the operator panel.',
+      es: 'Producto de automatización de facturación que integra las APIs de QuickBooks y Hotmart para facturar compras digitales de forma automática. Los webhooks de Hotmart caen en jobs encolados procesados con Redis y monitoreados con Horizon — facturación idempotente y a prueba de reintentos para que ninguna compra se facture dos veces. Construido de punta a punta en el stack TALL con Filament PHP como panel de operador.',
     },
   },
   {
