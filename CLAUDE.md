@@ -144,3 +144,6 @@ Add additional domains here if needed for Next.js Image component optimization.
 - Skills section uses `react-fast-marquee` for horizontal scrolling
 - Projects section uses sticky positioning with staggered z-index
 - Lottie animations located in `/public/lottie/` are referenced by filename in section components
+
+## Resume (CV)
+A print-ready, self-contained HTML resume lives in `cv/osmell-caicedo-cv.html` (Resuminator-style two-column clone). It is intentionally **not web-published** — it lives outside `app/` and `public/`, so Next.js never serves or bundles it. To export a PDF, open it in Chrome and print to PDF; see `cv/README.md` for details.
