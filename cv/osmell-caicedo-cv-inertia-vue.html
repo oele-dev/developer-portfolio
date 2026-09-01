@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Osmell Caicedo — Senior Laravel Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Ship Log tokens — mirrored from app/css/globals.scss */
+    --paper:     #f3efe7;
+    --paper-2:   #ebe6dc;
+    --ink:       #0a0a0a;
+    --ink-soft:  #3d3d3d;
+    --rule:      #1a1a1a;
+    --rule-soft: #cdc6b8;
+    --accent:    #ff4500;
+
+    --font-display: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+    --font-body:    'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    --font-mono:    'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+    --sheet-width: 8.5in;
+    --sheet-pad:   0.6in;
+
+    /* Vertical rhythm — raise these together to open the page up. */
+    --sp-section: 25px;
+    --sp-job:     14px;
+    --sp-bullet:  8px;
+  }
+
+  * {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper-2);
+    font-family: var(--font-body);
+    color: var(--ink);
+  }
+
+  .sheet {
+    width: var(--sheet-width);
+    margin: 24px auto;
+    padding: var(--sheet-pad);
+    background: var(--paper);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+  }
+
+  /* ---------- Header ---------- */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    padding-bottom: 13px;
+    border-bottom: 1.5px solid var(--rule);
+  }
+
+  .name {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 0.95;
+  }
+
+  .role {
+    margin: 6px 0 0;
+    font-size: 13.5px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+
+  .role .spec {
+    display: block;
+    margin-top: 3px;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+  }
+
+  .contact {
+    text-align: right;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+
+  /* ---------- Section headers, full width ---------- */
+  .sec { margin-top: var(--sp-section); }
+
+  .sec-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 11px;
+  }
+
+  .sec-head h2 {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  .sec-head .line {
+    flex: 1;
+    height: 1px;
+    background: var(--rule-soft);
+  }
+
+  /* ---------- Text ---------- */
+  .summary {
+    margin: 0;
+    font-size: 11.5px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+
+  .summary strong { font-weight: 600; color: var(--ink); }
+
+  .expertise {
+    margin: 0 0 7px;
+    font-size: 11px;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+
+  .expertise:last-child { margin-bottom: 0; color: var(--ink-soft); }
+  .expertise b { font-weight: 600; }
+  .expertise .mark { color: var(--accent); font-family: var(--font-mono); }
+
+  /* ---------- Jobs ---------- */
+  .job {
+    margin-bottom: var(--sp-job);
+  }
+
+  /* Hairline so a bullet list can never read as belonging to the next employer. */
+  .job + .job {
+    padding-top: 13px;
+    border-top: 1px solid var(--rule-soft);
+  }
+
+  .job:last-child { margin-bottom: 0; }
+
+  .job-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 14px;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .job-title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .job-title .co { color: var(--accent); }
+
+  .job-when {
+    flex-shrink: 0;
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  .job-context {
+    margin: 5px 0 9px;
+    font-size: 11px;
+    line-height: 1.65;
+    color: var(--ink);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .job-context strong { font-weight: 600; }
+
+  .path {
+    margin: 7px 0 9px;
+    padding: 7px 11px;
+    background: var(--paper-2);
+    border-left: 2px solid var(--accent);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+
+  .path .arrow { color: var(--accent); }
+
+  /* ---------- Bullets ---------- */
+  ul { margin: 8px 0 0; padding: 0; list-style: none; }
+
+  li {
+    position: relative;
+    padding-left: 14px;
+    margin-bottom: var(--sp-bullet);
+    font-size: 11px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  li:last-child { margin-bottom: 0; }
+
+  li::before {
+    content: "▪";
+    position: absolute;
+    left: 1px;
+    top: -1px;
+    font-size: 8.5px;
+    color: var(--accent);
+  }
+
+  li strong { font-weight: 600; color: var(--ink); }
+
+  .metric { font-family: var(--font-mono); font-weight: 500; color: var(--ink); }
+
+  /* ---------- Compact rows (projects, skills, education) ---------- */
+  .row {
+    display: grid;
+    grid-template-columns: 1.45in 1fr;
+    gap: 0 14px;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    font-size: 11px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+
+  .row:last-of-type { border-bottom: 0; }
+
+  .row-key {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    padding-top: 1px;
+  }
+
+  .row-key.cat {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .row strong { font-weight: 600; color: var(--ink); }
+
+  .row-when {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    color: var(--ink-soft);
+  }
+
+  .note {
+    margin: 12px 0 0;
+    font-size: 10.5px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+
+  .note strong { font-weight: 600; color: var(--ink); }
+
+  /* ---------- Print ---------- */
+  @page { size: Letter; margin: 0.55in; }
+
+  @media print {
+    body { background: #fff; }
+    .sheet {
+      width: auto;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      background: transparent;
+    }
+    .sec-head { break-after: avoid; }
+    .job-head + ul li:first-child,
+    .job-context + ul li:first-child { break-before: avoid; page-break-before: avoid; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="sheet">
+
+    <header class="header">
+      <div>
+        <h1 class="name">Osmell Caicedo</h1>
+        <p class="role">Senior Laravel Engineer
+          <span class="spec">Livewire Decomposition · Inertia/Vue Migrations · Legacy Modernization</span>
+        </p>
+      </div>
+      <div class="contact">
+        Bogotá, Colombia — Remote<br>
+        oele.dev<br>
+        github.com/oele-dev
+      </div>
+    </header>
+
+    <!-- SUMMARY -->
+    <section class="sec">
+      <div class="sec-head"><h2>Summary</h2><span class="line"></span></div>
+      <p class="summary">Senior Laravel Engineer with <strong>10 years</strong> in the Laravel ecosystem, specializing in <strong>Livewire decomposition</strong>, <strong>Inertia/Vue migrations</strong>, <strong>Vue 3</strong>, <strong>TypeScript</strong>, testing and legacy application modernization. Experienced untangling coupled validation, presentation and business logic while preserving behavior, across multi-app, shared-database environments.</p>
+    </section>
+
+    <!-- CORE EXPERTISE -->
+    <section class="sec">
+      <div class="sec-head"><h2>Core Expertise</h2><span class="line"></span></div>
+      <p class="expertise"><span class="mark">▸</span> <b>Laravel · Livewire · Blade · Inertia.js · Vue 3 · TypeScript · PHPUnit · Vitest · MySQL · Git / GitHub · Spatie laravel-data · Redis · React · Docker · CI/CD</b></p>
+      <p class="expertise"><span class="mark">▸</span> Legacy modernization · Test-forward refactoring · Multi-app / shared database · Application consolidation · DTO and type synchronization</p>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="sec">
+      <div class="sec-head"><h2>Experience</h2><span class="line"></span></div>
+
+      <div class="job">
+        <div class="job-head">
+          <h3 class="job-title">Senior Software Engineer, <span class="co">Level60 Consulting</span></h3>
+          <span class="job-when">Sep 2024 – Present · Nashville, TN (Remote)</span>
+        </div>
+        <p class="job-context"><strong>Multi-app Laravel ecosystem</strong> — several applications deploying from one core codebase against a <strong>shared database</strong>, built on Blade and Livewire, with Inertia as the target architecture.</p>
+        <ul>
+          <li><strong>Decomposed oversized Livewire components</strong> in a legacy Blade/Livewire codebase: extracted queries and database calls out of the views, moved business logic into controllers, and reduced each component to the view and the logic driving it.</li>
+          <li>Reshaped them into <strong>prop-driven, event-emitting boundaries</strong> — the form a Vue component takes — so the decomposition doubles as the path toward <strong>Inertia</strong>. Required working through <strong>Livewire's hydration and mutation cycle</strong>: how events chain, how listeners fire, what each round trip carries.</li>
+          <li><strong>Consolidated a React SPA and a separate Laravel API into a single Inertia monolith</strong>, returning session handling to Laravel and moving data access behind controllers. DTOs generated with <strong>Spatie laravel-data</strong> keep the shape Laravel emits and the type <strong>TypeScript</strong> expects in sync from one definition.</li>
+          <li><strong>Worked test-forward through that legacy code</strong>: generated coverage verifying existing behavior before each stage of refactoring ran, and added end-to-end coverage with <strong>Pest</strong> browser tests running on <strong>Playwright</strong>.</li>
+          <li><strong>Modernized a production application from Laravel 8 to Laravel 12 using Rector</strong>, staging rule sets and keeping the <strong>CI/CD</strong> pipeline green throughout.</li>
+          <li>Cut the heaviest <strong>SQL Server</strong> queries from <span class="metric">5 s to 900 ms</span> on a real-time dashboard over millions of rows — targeted queries where eager loading could not express the shape, <strong>Redis</strong> caching and <strong>Laravel Octane</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <h3 class="job-title">Senior Software Engineer, <span class="co">EyeUniversal LLC</span></h3>
+          <span class="job-when">Feb 2022 – Apr 2024 · San José, CA (Remote)</span>
+        </div>
+        <ul>
+          <li><strong>Lead developer on MyFAB</strong>, a drainage system configurator built from scratch on <strong>Laravel + Inertia + Vue 3</strong> and running in production — the user sets run length and depth, and the application resolves the pieces, renders an interactive diagram and prices the quote (runlayouttool.com).</li>
+          <li>Kept <strong>validation, display state and pricing rules separated behind a props contract</strong>, so a single screen carrying all three stayed maintainable as slope profiles and materials were added.</li>
+          <li><strong>Owned delivery end to end</strong> for US clients — requirements straight from the product manager, no tech lead above me.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <h3 class="job-title">Lead Developer, <span class="co">Ovy.so</span></h3>
+          <span class="job-when">Jul 2017 – May 2022 · Colombia</span>
+        </div>
+        <p class="path">Native PHP <span class="arrow">→</span> Laravel <span class="arrow">→</span> Blade <span class="arrow">→</span> Inertia v1 <span class="arrow">→</span> Inertia v2 &nbsp;&nbsp; Vue 2 <span class="arrow">→</span> Vue 3, Composition API</p>
+        <ul>
+          <li><strong>Led the technical team through that migration</strong>, carrying a native PHP monolith to Laravel and Blade, then to <strong>Inertia</strong>, and from <strong>Inertia v1 to v2</strong> on <strong>Docker</strong>.</li>
+          <li>Built the whole Inertia surface: <strong>session and auth handling</strong>, the <strong>props contract</strong> between controller and page, and the <strong>component boundaries</strong> separating presentational single-file components from those owning logic. Shipped an offline <strong>PWA</strong>, covered in <strong>Laravel Dusk</strong>.</li>
+          <li>Introduced <strong>GitLab Flow, Conventional Commits and continuous delivery</strong> to a team that had none, and delivered a <strong>Google Workspace integration over OAuth2</strong> for one-click Meet sessions and passwordless sign-in.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <h3 class="job-title">Instructor, Software Development (ADSO), <span class="co">SENA</span></h3>
+          <span class="job-when">2021 – 2025 · Colombia</span>
+        </div>
+        <p class="job-context">Taught the same programme I graduated from, mentoring junior developers through their first production codebases.</p>
+      </div>
+
+    </section>
+
+    <!-- OPEN SOURCE -->
+    <section class="sec">
+      <div class="sec-head"><h2>Open Source</h2><span class="line"></span></div>
+      <div class="row">
+        <div class="row-key">laravel-missing-index</div>
+        <div><strong>Laravel</strong> package that runs <strong>EXPLAIN</strong> on every query in development, flags full table scans and missing indexes, and outputs the <strong>CREATE INDEX</strong> statement that resolves them.</div>
+      </div>
+      <div class="row">
+        <div class="row-key">vilt-test</div>
+        <div>Public <strong>VILT</strong> starter kit — <strong>Vue, Inertia, Laravel</strong> and Tailwind, with Vite and <strong>PHPUnit</strong> configured. MIT licensed.</div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="sec">
+      <div class="sec-head"><h2>Skills</h2><span class="line"></span></div>
+      <div class="row">
+        <div class="row-key cat">Backend</div>
+        <div>PHP 8.3, Laravel 8–12, Eloquent, Octane, Horizon, Queues, Jobs, Redis</div>
+      </div>
+      <div class="row">
+        <div class="row-key cat">Frontend</div>
+        <div>Inertia.js v1/v2, Vue 3, Vue 2, Composition API, Livewire 2/3, Blade, React, TypeScript, Alpine.js, Tailwind</div>
+      </div>
+      <div class="row">
+        <div class="row-key cat">Testing</div>
+        <div>PHPUnit, Pest, Vitest, Playwright, Laravel Dusk; behavior-focused, test-forward refactoring</div>
+      </div>
+      <div class="row">
+        <div class="row-key cat">Database</div>
+        <div>MySQL, SQL Server, PostgreSQL, EXPLAIN, indexing, query optimization, caching</div>
+      </div>
+      <div class="row">
+        <div class="row-key cat">Delivery</div>
+        <div>Git, GitHub, GitLab Flow, Docker, Nginx, CI/CD, Rector, Conventional Commits</div>
+      </div>
+      <div class="row">
+        <div class="row-key cat">Architecture</div>
+        <div>Multi-app / shared database, application consolidation, Spatie laravel-data DTOs, REST, webhooks, OAuth2</div>
+      </div>
+      <p class="note"><strong>AI-assisted development:</strong> Claude Code and Cursor for scaffolding, mechanical refactors and test drafts, with review gates; architecture, auth and money-related logic remain human-reviewed.</p>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="sec">
+      <div class="sec-head"><h2>Education</h2><span class="line"></span></div>
+      <div class="row">
+        <div class="row-key">SENA, Colombia</div>
+        <div><strong>Associate's Degree, Software Analysis &amp; Development (ADSO)</strong> <span class="row-when">· 2009 – 2011</span></div>
+      </div>
+      <div class="row">
+        <div class="row-key">Ongoing</div>
+        <div>Professional development — Laracasts · 39 Platzi certifications</div>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
