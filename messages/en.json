@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Osmell Caicedo — Senior Laravel Engineer · Indie Maker · Mentor",
-    "description": "Senior Laravel engineer with 10+ years building multi-tenant products, Filament admin panels, and serious API integrations. AI-augmented since 2023. Available for remote contracts from Bogotá."
+    "title": "Osmell Caicedo — Senior Laravel Engineer · Livewire, Inertia & Vue",
+    "description": "Senior Laravel engineer with 10+ years. Livewire decomposition, Inertia/Vue migrations and legacy modernization, plus multi-tenant products, Filament admin panels and serious API integrations. AI-augmented since 2023. Available for remote contracts from Bogotá."
   },
   "nav": {
     "work": "WORK",
@@ -30,16 +30,16 @@
   },
   "work": {
     "label": "02 — SELECTED WORK",
-    "intro": "Seven projects across products, packages and integrations."
+    "intro": "Nine projects across products, packages and integrations."
   },
   "experience": {
     "label": "03 — EXPERIENCE",
-    "intro": "Ten years across Laravel teams in Colombia, Malta and the US."
+    "intro": "Ten years across Laravel teams in Colombia, Malta and the US — lately on legacy modernization: Livewire decomposition and the road to Inertia."
   },
   "about": {
     "label": "04 — ABOUT",
     "pullQuote": "I build the boring parts well so the interesting parts get a chance.",
-    "body": "I'm a software engineer with ten years of experience in the Laravel ecosystem (TALL & VILT) and, more recently, Next.js and Astro. I specialize in multi-tenant applications, Filament admin panels, serious API integrations (Google Workspace, QuickBooks, Hotmart, MikroTik, n8n) and programmatic SEO at scale.\n\nI've worked with US companies (Level60 Consulting · Nashville, EyeUniversal · San José) and led the technical team at Ovy.so for five years, migrating a PHP monolith to Laravel + Vue/Inertia, building a PWA, and shipping a Google Workspace integration.\n\nNow I split my time between client contracts and shipping my own products (Ultti, Malta Pharmacy Empire, mkdn). I use Claude Code and Cursor as part of my daily workflow — they're tools, not authors.\n\nAvailable for remote contracts, Laravel performance audits, and product collaborations."
+    "body": "I'm a software engineer with ten years of experience in the Laravel ecosystem (TALL & VILT) and, more recently, Next.js and Astro. I specialize in multi-tenant applications, Filament admin panels, serious API integrations (Google Workspace, QuickBooks, Hotmart, MikroTik, n8n) and programmatic SEO at scale.\n\nMost of my current work is legacy modernization: decomposing oversized Livewire components, moving business logic out of views and into controllers, and reshaping what is left into prop-driven boundaries — the form a Vue component takes — so the refactor becomes the path toward Inertia rather than a detour before it.\n\nI've worked with US companies (Level60 Consulting · Nashville, EyeUniversal · San José) and led the technical team at Ovy.so for five years, migrating a PHP monolith to Laravel and then to Inertia — v1 through v2, Vue 2 through Vue 3 — building a PWA, and shipping a Google Workspace integration.\n\nNow I split my time between client contracts and shipping my own products (Ultti, Malta Pharmacy Empire, mkdn). I use Claude Code and Cursor as part of my daily workflow — they're tools, not authors.\n\nAvailable for remote contracts, Laravel performance audits, and product collaborations."
   },
   "contact": {
     "label": "05 — CONTACT",
