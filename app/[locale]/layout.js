@@ -141,7 +141,6 @@ export default async function LocaleLayout({ children, params: { locale } }) {
       addressLocality: 'Bogotá',
       addressCountry: 'Colombia',
     },
-    email: 'hola@oele.dev',
   };
 
   return (

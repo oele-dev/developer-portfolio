@@ -9,7 +9,8 @@ export const personalData = {
     en: "Software engineer with 10+ years building web products on the Laravel ecosystem (TALL & VILT). I specialize in Livewire decomposition, Inertia/Vue migrations and legacy application modernization — untangling coupled validation, presentation and business logic without breaking behavior. Also work on the Laravel ecosystem (TALL & VILT) and, more recently, Next.js and Astro. I specialize in multi-tenant applications, Filament admin panels, serious API integrations (Google Workspace, QuickBooks, Hotmart, MikroTik, n8n) backed by reliable queues/jobs on Redis and Horizon, and programmatic SEO at scale. Available for remote contracts, performance audits and projects where moving the business forward matters more than the stack.",
     es: 'Ingeniero de software con +10 años construyendo productos web sobre el ecosistema Laravel (TALL & VILT). Me especializo en descomposición de Livewire, migraciones a Inertia/Vue y modernización de aplicaciones legacy — desenredar validación, presentación y lógica de negocio acopladas sin romper el comportamiento. También trabajo sobre el ecosistema Laravel (TALL & VILT) y, más recientemente, sobre Next.js y Astro. Me especializo en aplicaciones multi-tenant, paneles administrativos con Filament, integraciones de APIs (Google Workspace, QuickBooks, Hotmart, MikroTik, n8n) respaldadas por queues/jobs confiables sobre Redis y Horizon, y sitios programáticos de SEO a escala. Disponible para contratos remotos, auditorías de performance y proyectos donde mover el negocio importe más que el stack.',
   },
-  email: 'hola@oele.dev',
+  // Split so no plain address ships in source or HTML; see ProtectedEmail.
+  emailParts: ['hola', 'oele.dev'],
   phone: '',
   address: 'Bogotá, Colombia · Remote',
   github: 'https://github.com/oele-dev',

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { personalData } from '@/utils/data/personal-data';
+import ProtectedEmail from '../../protected-email';
 
 const PlusTick = () => (
   <svg
@@ -70,13 +71,13 @@ export default function HeroSection({ locale }) {
 
             {/* CTAs */}
             <div className="fade-up delay-450 flex flex-wrap items-center gap-4 pt-2">
-              <a
-                href="mailto:hola@oele.dev"
+              <ProtectedEmail
+                fallbackHref="#contact"
                 className="font-mono text-xs tracking-widest uppercase px-6 py-3 text-ink transition-colors duration-150"
                 style={{ backgroundColor: 'var(--accent)', color: 'var(--ink)' }}
               >
                 {ctaPrimary}
-              </a>
+              </ProtectedEmail>
               <a
                 href={personalData.resume}
                 target="_blank"

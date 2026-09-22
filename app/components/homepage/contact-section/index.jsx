@@ -1,5 +1,6 @@
 import { personalData } from '@/utils/data/personal-data';
 import ContactForm from './contact-form';
+import ProtectedEmail from '../../protected-email';
 
 export default function ContactSection({ locale }) {
   const isEs = locale === 'es';
@@ -25,13 +26,10 @@ export default function ContactSection({ locale }) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left: email + socials */}
           <div className="flex flex-col gap-6">
-            <a
-              href={`mailto:${personalData.email}`}
+            <ProtectedEmail
               className="font-display italic text-ink hover:text-accent transition-colors duration-150"
               style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)' }}
-            >
-              {personalData.email}
-            </a>
+            />
 
             <p className="font-body text-ink-soft leading-relaxed max-w-prose">
               {blurb}
