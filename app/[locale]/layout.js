@@ -32,6 +32,9 @@ const mono = IBM_Plex_Mono({
   display: 'swap',
 });
 
+// Only prebuilt locales are valid; anything else (e.g. /wp-login.php) is a 404, not a crash.
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
