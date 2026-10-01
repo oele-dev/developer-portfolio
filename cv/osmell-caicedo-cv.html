@@ -3,27 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Osmell Caicedo — Resume</title>
+<title>Osmell Caicedo | Resume</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    /* Ship Log tokens — mirrored from app/css/globals.scss */
-    --paper:    #f3efe7;
-    --paper-2:  #ebe6dc;
-    --ink:      #0a0a0a;
-    --ink-soft: #3d3d3d;
-    --rule:     #1a1a1a;
-    --accent:   #ff4500;
+    /* Tokens mirrored from app/css/globals.scss. The page uses the lighter surface tone
+       instead of the travertine wall so a printed copy doesn't soak the paper in ink. */
+    --paper:    #f6f3ee;
+    --desk:     #e8e3db;
+    --ink:      #1c1917;
+    --ink-body: #44403c;
+    --ink-soft: #615a53;
+    --rule:     rgba(28, 25, 23, 0.14);
+    --accent:   #2340ff;
 
-    --font-display: 'Instrument Serif', Georgia, 'Times New Roman', serif;
-    --font-body:    'IBM Plex Sans', system-ui, -apple-system, sans-serif;
-    --font-mono:    'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+    --font: 'Instrument Sans', system-ui, -apple-system, sans-serif;
 
     --page-width:  8.5in;
     --page-height: 11in;
-    --page-margin: 0.5in;
+    --page-margin: 0.45in;
   }
 
   * {
@@ -32,15 +32,13 @@
     print-color-adjust: exact;
   }
 
-  html, body {
-    margin: 0;
-    padding: 0;
-  }
+  html, body { margin: 0; padding: 0; }
 
   body {
-    background: var(--paper-2);
-    font-family: var(--font-body);
+    background: var(--desk);
+    font-family: var(--font);
     color: var(--ink);
+    -webkit-font-smoothing: antialiased;
   }
 
   .page {
@@ -49,112 +47,85 @@
     margin: 24px auto;
     padding: var(--page-margin);
     background: var(--paper);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 8px 24px rgba(28, 25, 23, 0.12);
   }
+
+  p, h1, h2, h3, ul { margin: 0; }
 
   /* ---------- Header ---------- */
   .header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    gap: 16px;
-  }
-
-  .header-left { flex: 1; min-width: 0; }
-
-  .eyebrow {
-    display: block;
-    font-family: var(--font-mono);
-    font-size: 9px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 6px;
+    gap: 24px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--rule);
   }
 
   .name {
-    margin: 0;
-    font-family: var(--font-display);
-    font-size: 46px;
-    font-weight: 400;
-    color: var(--ink);
-    line-height: 0.95;
-    letter-spacing: 0.01em;
+    font-size: 34px;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1;
   }
 
-  .subtitle {
-    margin: 4px 0 0;
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: 18px;
-    color: var(--ink-soft);
-    line-height: 1.1;
+  .headline {
+    margin-top: 6px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink-body);
   }
+  .headline em { font-style: normal; color: var(--accent); }
 
-  .header-right {
+  .contact {
     text-align: right;
-    font-family: var(--font-mono);
-    font-size: 9px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
+    font-size: 10px;
+    line-height: 1.65;
     color: var(--ink-soft);
-    line-height: 1.7;
     white-space: nowrap;
   }
+  .contact b { color: var(--ink); font-weight: 600; }
 
-  .contact-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 3px 10px;
-    margin-top: 16px;
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
+  .intro {
+    margin: 12px 0 18px;
+    font-size: 10.5px;
+    line-height: 1.6;
+    color: var(--ink-body);
   }
 
-  .contact-sep { color: var(--accent); }
-
-  .header-rule {
-    height: 1px;
-    background: var(--rule);
-    margin: 16px 0 24px;
-  }
-
-  /* ---------- Columns ---------- */
+  /* ---------- Chapters ---------- */
   .columns {
     display: grid;
-    grid-template-columns: 55% 45%;
-    gap: 30px;
+    grid-template-columns: 1.12fr 1fr;
+    gap: 26px;
   }
+  .col { min-width: 0; }
 
-  .col-left, .col-right { min-width: 0; }
+  .chapter { margin-bottom: 16px; }
+  .chapter:last-child { margin-bottom: 0; }
 
-  .section { margin-bottom: 30px; }
-  .section:last-child { margin-bottom: 0; }
-
-  .section-title {
+  .chapter-title {
     display: flex;
     align-items: baseline;
     gap: 8px;
-    margin: 0 0 15px;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--ink);
+    padding-bottom: 5px;
+    margin-bottom: 9px;
     border-bottom: 1px solid var(--rule);
-    padding-bottom: 7px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .chapter-title .num { color: var(--accent); font-variant-numeric: tabular-nums; }
+  .chapter-title .tag { margin-left: auto; font-size: 9.5px; font-weight: 400; color: var(--ink-soft); }
+
+  .sub {
+    margin: 10px 0 5px;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--ink);
   }
 
-  .section-title .num { color: var(--accent); }
-
-  /* ---------- Entries (experience / education) ---------- */
-  .entry { margin-bottom: 18px; }
+  /* ---------- Entries ---------- */
+  .entry { margin-bottom: 9px; }
   .entry:last-child { margin-bottom: 0; }
 
   .entry-head {
@@ -163,106 +134,58 @@
     align-items: baseline;
     gap: 8px;
   }
-
-  .entry-title {
-    margin: 0;
-    font-family: var(--font-display);
-    font-size: 20px;
-    font-weight: 400;
-    color: var(--ink);
-    line-height: 1.1;
-  }
-
+  .entry-title { font-size: 11.5px; font-weight: 600; line-height: 1.25; }
   .entry-dates {
     flex-shrink: 0;
-    font-family: var(--font-mono);
     font-size: 9.5px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
     color: var(--ink-soft);
+    font-variant-numeric: tabular-nums;
     white-space: nowrap;
   }
+  .entry-meta { margin: 1px 0 3px; font-size: 9.5px; color: var(--ink-soft); }
+  .entry-desc { font-size: 10px; line-height: 1.55; color: var(--ink-body); }
+  .entry-desc strong, .item strong { color: var(--ink); font-weight: 600; }
 
-  .entry-meta {
-    margin: 4px 0 7px;
-    font-family: var(--font-mono);
-    font-size: 9.5px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-  }
+  .item { margin-bottom: 6px; font-size: 10px; line-height: 1.5; color: var(--ink-body); }
+  .item:last-child { margin-bottom: 0; }
+  .item-name { color: var(--ink); font-weight: 600; }
 
-  .entry-desc {
-    margin: 0;
-    font-size: 11.5px;
-    line-height: 1.75;
-    text-align: justify;
-    text-justify: inter-word;
-    hyphens: auto;
-    color: var(--ink-soft);
-  }
-
-  /* ---------- Projects ---------- */
-  .project { margin-bottom: 17px; }
-  .project:last-child { margin-bottom: 0; }
-
-  .project-title {
-    margin: 0 0 5px;
-    font-family: var(--font-display);
-    font-size: 18px;
-    font-weight: 400;
-    color: var(--ink);
-    line-height: 1.15;
-  }
-
-  .project-desc {
-    margin: 0;
-    font-size: 11.5px;
-    line-height: 1.75;
-    text-align: justify;
-    text-justify: inter-word;
-    hyphens: auto;
-    color: var(--ink-soft);
-  }
-
-  /* ---------- Skills ---------- */
-  .skill-group { margin-bottom: 13px; }
-  .skill-group:last-child { margin-bottom: 0; }
-
-  .skill-label {
-    margin: 0 0 3px;
-    font-family: var(--font-mono);
-    font-size: 9.5px;
+  .pill {
+    display: inline-block;
+    margin-left: 4px;
+    padding: 0 6px;
+    border-radius: 999px;
+    font-size: 8.5px;
     font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--accent);
+    line-height: 1.6;
+    vertical-align: 1px;
+    border: 1px solid var(--rule);
+    color: var(--ink-body);
   }
+  .pill.live { background: var(--accent); border-color: var(--accent); color: #fff; }
 
-  .skill-list {
-    margin: 0;
+  .skills { font-size: 10px; line-height: 1.5; color: var(--ink-body); }
+  .skills p { margin-bottom: 3px; }
+  .skills b { color: var(--ink); font-weight: 600; }
+
+  .quote {
+    margin-top: 8px;
+    padding-left: 10px;
+    border-left: 2px solid var(--accent);
     font-size: 11px;
-    line-height: 1.7;
-    color: var(--ink-soft);
+    line-height: 1.45;
+    color: var(--ink);
   }
 
   /* ---------- Print ---------- */
-  @page {
-    size: Letter;
-    margin: 0;
-  }
+  @page { size: Letter; margin: 0; }
 
   @media print {
-    body {
-      background: var(--paper);
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
-    }
+    body { background: var(--paper); }
     .page {
       width: auto;
       min-height: 100vh;
       margin: 0;
-      padding: 0.5in;
       box-shadow: none;
     }
   }
@@ -271,50 +194,50 @@
 <body>
   <div class="page">
     <header class="header">
-      <div class="header-left">
-        <span class="eyebrow">+ Curriculum Vitae</span>
+      <div>
         <h1 class="name">Osmell Caicedo</h1>
-        <p class="subtitle">Senior Laravel Engineer · Indie Maker</p>
-        <div class="contact-row">
-          <span>hola@oele.dev</span>
-          <span class="contact-sep">·</span>
-          <span>GitHub: oele-dev</span>
-          <span class="contact-sep">·</span>
-          <span>oele.dev</span>
-          <span class="contact-sep">·</span>
-          <span>LinkedIn: oele-dev</span>
-          <span class="contact-sep">·</span>
-          <span>Bogotá, Colombia (Remote)</span>
-        </div>
+        <p class="headline">Software and AI engineer, with <em>Laravel</em> at the core.</p>
       </div>
-      <div class="header-right">
-        AI-Augmented<br>Workflow<br>MMXXVI
+      <div class="contact">
+        <b>hola@oele.dev</b><br>
+        oele.dev · github.com/oele-dev<br>
+        linkedin.com/in/oele-dev<br>
+        Colombia, working remotely
       </div>
     </header>
 
-    <div class="header-rule"></div>
+    <p class="intro">Shipping web products since 2014. Ten years rescuing and scaling Laravel systems, an agentic AI workflow that makes me faster, and products of my own. This resume follows the same four chapters as oele.dev.</p>
 
     <div class="columns">
-      <div class="col-left">
-        <section class="section">
-          <h2 class="section-title"><span class="num">01</span> — Experience</h2>
+      <div class="col">
+        <section class="chapter">
+          <h2 class="chapter-title"><span class="num">01</span>Foundation<span class="tag">Senior Laravel engineer</span></h2>
 
           <div class="entry">
             <div class="entry-head">
               <h3 class="entry-title">Senior Software Engineer</h3>
               <span class="entry-dates">Sep 2024 – Present</span>
             </div>
-            <p class="entry-meta">Level60 Consulting · Nashville, TN (Remote)</p>
-            <p class="entry-desc">Ship features across a portfolio of Laravel applications, focusing on performance and maintainability. Introduced Filament as the admin layer on several projects, contributed to Next.js/TypeScript frontends and CI/CD. Work in an AI-augmented workflow — Claude Code and Cursor for implementation, refactors and test scaffolding — pairing AI speed with rigorous human review to ship faster without lowering quality.</p>
+            <p class="entry-meta">Level60 Consulting, Nashville, TN (remote)</p>
+            <p class="entry-desc">Several Laravel apps on Blade and Livewire deploy from one codebase against a shared database, with Inertia as the target. I decompose oversized Livewire components, moving queries and business logic out of the views into prop-driven boundaries. Merged a React SPA and its separate API into one Inertia monolith, with Spatie laravel-data DTOs keeping PHP and TypeScript in sync. Upgraded a production app from <strong>Laravel 8 to 12</strong> with Rector, adding coverage before each step. Introduced Filament as the admin layer on several projects.</p>
           </div>
 
           <div class="entry">
             <div class="entry-head">
-              <h3 class="entry-title">Senior Software Engineer</h3>
+              <h3 class="entry-title">Senior Software Engineer (contract)</h3>
               <span class="entry-dates">Feb 2022 – Apr 2024</span>
             </div>
-            <p class="entry-meta">EyeUniversal LLC · San José, CA (Remote)</p>
-            <p class="entry-desc">Built Laravel web apps and e-commerce stores (WooCommerce, WordPress, Shopify) for US clients. Owned full delivery: requirements → architecture → deploy.</p>
+            <p class="entry-meta">EyeUniversal LLC, San José, CA (remote)</p>
+            <p class="entry-desc">Lead developer on <strong>Run Layout Tool</strong>, a gutter-run configurator built from scratch on Laravel, Inertia and Vue 3 and still in production. Requirements came straight from the product manager, with no tech lead above me. Also shipped Laravel apps and WooCommerce, WordPress and Shopify stores for US clients.</p>
+          </div>
+
+          <div class="entry">
+            <div class="entry-head">
+              <h3 class="entry-title">Software Development Instructor</h3>
+              <span class="entry-dates">2021 – 2025</span>
+            </div>
+            <p class="entry-meta">SENA, Colombia</p>
+            <p class="entry-desc">Taught HTML, CSS, JavaScript, PHP and Laravel, Git and CI/CD in the ADSO program. Designed the practice repos and evaluation rubrics.</p>
           </div>
 
           <div class="entry">
@@ -322,71 +245,52 @@
               <h3 class="entry-title">Lead Developer</h3>
               <span class="entry-dates">Jul 2017 – May 2022</span>
             </div>
-            <p class="entry-meta">Ovy.so · Colombia</p>
-            <p class="entry-desc">Led the technical team migrating a PHP monolith to Laravel + Vue/Inertia on Docker. Shipped GitLab Flow, Conventional Commits and Continuous Delivery, an offline PWA, and a Google Workspace integration.</p>
-          </div>
-        </section>
-
-        <section class="section">
-          <h2 class="section-title"><span class="num">03</span> — Skills</h2>
-
-          <div class="skill-group">
-            <h4 class="skill-label">Backend & Reliability</h4>
-            <p class="skill-list">Laravel Ecosystem (TALL/VILT), PHP, MySQL debugging, Redis, Queues/Jobs, Laravel Horizon, REST & Webhook integrations, Multi-tenant</p>
+            <p class="entry-meta">Ovy.so, Colombia</p>
+            <p class="entry-desc">Led the migration of a vanilla PHP product to Laravel and Blade, then to Inertia (v1 to v2) and from Vue 2 to Vue 3 on Docker. Set up GitLab Flow, Conventional Commits and continuous delivery, turned the frontend into an offline-capable PWA and built the Google Workspace integration.</p>
           </div>
 
-          <div class="skill-group">
-            <h4 class="skill-label">Frontend</h4>
-            <p class="skill-list">Next.js, TypeScript, Vue/Inertia, Livewire, Alpine.js, Tailwind, Astro</p>
-          </div>
+          <h3 class="sub">Selected Laravel work</h3>
+          <p class="item"><span class="item-name">QuickBooks and Hotmart billing.</span> Webhooks into queued jobs on Redis and Horizon, idempotent and retry-safe, so no purchase is invoiced twice. TALL stack with a Filament operator panel.</p>
+          <p class="item"><span class="item-name">Google Workspace for Laravel.</span> PHP package for Meet, Classroom, Calendar and Accounts over OAuth2, running virtual classrooms in production.</p>
+          <p class="item"><span class="item-name">laravel-missing-index.</span> Package that runs EXPLAIN on every dev query and prints the CREATE INDEX that fixes it.</p>
 
-          <div class="skill-group">
-            <h4 class="skill-label">Workflow & Practices</h4>
-            <p class="skill-list">CI/CD, GitLab Flow, Conventional Commits, Scrum, MVC, SOLID, KISS, TDD</p>
-          </div>
-
-          <div class="skill-group">
-            <h4 class="skill-label">AI-Augmented Development</h4>
-            <p class="skill-list">Claude Code, Cursor, MCP, spec-driven prompting, AI-assisted debugging & refactors, review-gated delivery</p>
+          <h3 class="sub">Education</h3>
+          <div class="entry-head">
+            <p class="item"><span class="item-name">Software Analysis and Development (ADSO)</span>, SENA, Colombia</p>
+            <span class="entry-dates">2009 – 2011</span>
           </div>
         </section>
       </div>
 
-      <div class="col-right">
-        <section class="section">
-          <h2 class="section-title"><span class="num">02</span> — Projects</h2>
+      <div class="col">
+        <section class="chapter">
+          <h2 class="chapter-title"><span class="num">02</span>Craft<span class="tag">How I work</span></h2>
+          <p class="item"><span class="item-name">Performance first.</span> Cut the heaviest SQL Server queries at Level60 from <strong>5 s to 900 ms</strong> with targeted queries, Redis and Octane. Malta Pharmacy serves 800+ pages generated at build time with no runtime database.</p>
+          <p class="item"><span class="item-name">Agentic workflow.</span> AI-augmented since 2023. Claude Code with custom agents for code review, security audits and testing, plus Cursor and MCP. I design the system and review every change the agents make.</p>
+          <p class="item"><span class="item-name">AI inside products.</span> Instructor Virtual grades coursework against rubrics with AI (<strong>1,200+ evidences analyzed</strong>). mkdn turns documents into Markdown for LLMs via Workers AI.</p>
 
-          <div class="project">
-            <h3 class="project-title">QuickBooks + Hotmart Integration — Praxis Studio</h3>
-            <p class="project-desc">Lead Developer on a billing automation product integrating QuickBooks + Hotmart APIs. Hotmart webhooks land on Redis-backed queued jobs monitored with Horizon — idempotent, retry-safe so no purchase is ever double-invoiced. TALL stack + Filament operator panel, MySQL.</p>
-          </div>
-
-          <div class="project">
-            <h3 class="project-title">Google Workspace ↔ Laravel Integration</h3>
-            <p class="project-desc">Authored a PHP package integrating Google Workspace (Meet, Classroom, Calendar, Accounts) with Laravel via OAuth2. Powered virtual classrooms with one-click Meet, calendar events and passwordless sign-in. Used in production.</p>
-          </div>
-
-          <div class="project">
-            <h3 class="project-title">Ultti — Multi-Tenant Delivery Platform (Solopreneur)</h3>
-            <p class="project-desc">Solopreneur SaaS for LATAM delivery businesses. Each tenant gets a branded catalog under {slug}.ultti.co, WhatsApp checkout, operator panel and per-tenant payments (Nequi, Daviplata, Bre-B). Single Supabase backend with RLS scoped per business.</p>
-          </div>
-
-          <div class="project">
-            <h3 class="project-title">Malta Pharmacy Empire — Programmatic SEO (Solopreneur)</h3>
-            <p class="project-desc">High-performance pharmacy directory: 800+ static pages generated at build from SQLite → JSON. JSON-LD schemas, sitemaps, PWA, zero runtime DB — maximum Core Web Vitals. Built with Next.js 15 + TypeScript.</p>
+          <div class="skills" style="margin-top: 8px;">
+            <p><b>Backend.</b> Laravel (TALL, VILT), PHP, Livewire, Filament, MySQL, SQL Server, Redis, queues and Horizon, Octane, webhooks and REST integrations, multi-tenant</p>
+            <p><b>Frontend.</b> Inertia, Vue 3, React, Next.js, TypeScript, Alpine.js, Tailwind, Astro</p>
+            <p><b>Practice.</b> Rector upgrades, test coverage before refactors, CI/CD, GitLab Flow, Conventional Commits, SOLID</p>
           </div>
         </section>
 
-        <section class="section">
-          <h2 class="section-title"><span class="num">04</span> — Education</h2>
+        <section class="chapter">
+          <h2 class="chapter-title"><span class="num">03</span>Building<span class="tag">Products I run</span></h2>
+          <p class="item"><span class="item-name">Ultti</span><span class="pill live">2 businesses live</span> A delivery business's catalog in one link; orders land on WhatsApp ready to dispatch. Multi-tenant on Supabase with row-level security. ultti.co</p>
+          <p class="item"><span class="item-name">Instructor Virtual</span><span class="pill live">Live</span> Chrome extension that tells SENA instructors what to grade first and grades with AI. instructorvirtual.co</p>
+          <p class="item"><span class="item-name">Malta Pharmacy Empire</span><span class="pill live">Live</span> Programmatic SEO directory in Next.js 15. malta-pharmacy.com</p>
+          <p class="item"><span class="item-name">VoiceMyGoals</span><span class="pill live">Live</span> Goals turned into affirmation audio with AI voices.</p>
+          <p class="item"><span class="item-name">Corre Conmigo</span><span class="pill">Beta</span> Voice messages from family in a runner's headphones, plus cues every kilometer. correconmigo.app</p>
+          <p class="item"><span class="item-name">FunAudios</span><span class="pill">Beta</span> Funny clips sent to WhatsApp as voice notes. funaudios.app</p>
+          <p class="item"><span class="item-name">Dr. Edicxon Gelviz</span><span class="pill">Lead agency</span> Medical SEO and lead generation in Astro.</p>
+        </section>
 
-          <div class="entry">
-            <div class="entry-head">
-              <h3 class="entry-title">Associate's Degree, Software Analysis & Development (ADSO)</h3>
-              <span class="entry-dates">2009–2011</span>
-            </div>
-            <p class="entry-meta">SENA (Servicio Nacional de Aprendizaje) · Colombia</p>
-          </div>
+        <section class="chapter">
+          <h2 class="chapter-title"><span class="num">04</span>Next<span class="tag">What I'm after</span></h2>
+          <p class="item">Remote contracts, legacy Laravel rescues and performance audits with teams that care about quality. New tools earn their place by what they change in the result. I keep shipping my own products and mentoring the next developers.</p>
+          <p class="quote">"I build the boring parts well so the interesting parts get a chance."</p>
         </section>
       </div>
     </div>
