@@ -7,6 +7,7 @@ import SiteHeader from '../components/chapters/site-header';
 import SiteFooter from '../components/chapters/site-footer';
 import ChapterObserver from '../components/chapters/chapter-observer';
 import MobileChapterNav from '../components/chapters/mobile-chapter-nav';
+import Sculpture from '../components/chapters/sculpture';
 import ToastProvider from '../components/toast-provider';
 import TitlePulse from '../components/title-pulse';
 import { locales } from '../../i18n';
@@ -160,6 +161,7 @@ export default async function LocaleLayout({ children, params: { locale } }) {
           <SiteFooter />
           <ChapterObserver scrollLabel={messages.nav.scroll} />
           <MobileChapterNav />
+          <Sculpture />
         </NextIntlClientProvider>
         <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM} />
         <SpeedInsights />

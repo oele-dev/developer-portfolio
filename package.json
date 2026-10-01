@@ -21,7 +21,8 @@
     "react": "latest",
     "react-dom": "latest",
     "react-icons": "^4.11.0",
-    "react-toastify": "^10.0.4"
+    "react-toastify": "^10.0.4",
+    "three": "^0.170.0"
   },
   "devDependencies": {
     "autoprefixer": "latest",
