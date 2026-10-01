@@ -4,11 +4,11 @@
     "description": "Ingeniero Laravel senior con más de 10 años. Modernización de legacy, descomposición de Livewire y migraciones a Inertia/Vue, un flujo de trabajo agéntico con IA y productos propios. Disponible para contratos remotos desde Colombia."
   },
   "nav": {
-    "label": "Capítulos",
-    "foundation": "Base",
-    "craft": "Oficio",
-    "building": "Producto",
-    "next": "Lo que sigue",
+    "label": "Chapters",
+    "foundation": "Foundation",
+    "craft": "Craft",
+    "building": "Building",
+    "next": "Next",
     "backToTop": "Osmell Caicedo, oele.dev, volver arriba",
     "camera": "Prueba la cámara",
     "cameraOn": "Cámara encendida",
@@ -24,14 +24,14 @@
     "ctaSecondary": "Ver el CV"
   },
   "foundation": {
-    "label": "Base",
+    "label": "Foundation",
     "headline": "Diez años construyendo sistemas Laravel que <em>no se rompen.</em>",
     "lede": "Tomo aplicaciones legacy donde la validación, la presentación y la lógica de negocio están enredadas, y las llevo a Laravel moderno sin romper su comportamiento. Descomposición de Livewire, migraciones a Inertia y Vue, paneles Filament, integraciones de APIs serias y paquetes open source.",
     "experience": "Experiencia",
     "work": "Trabajo destacado"
   },
   "craft": {
-    "label": "Oficio",
+    "label": "Craft",
     "headline": "La versión pro de las cosas, hasta el <em>último milisegundo.</em>",
     "lede": "Trabajo con IA desde 2023. Mido el trabajo por retorno, no por horas. Exprimo el rendimiento, corto lo que no paga y uso agentes de IA para avanzar más rápido, con la arquitectura y el criterio en mis manos.",
     "howIWork": "Cómo trabajo",
@@ -45,12 +45,12 @@
     "proof": "<strong>Esta página es la prueba.</strong> {count} partículas y shaders GLSL propios, corriendo a {fps} fps. Enciende tu cámara y la escultura se reconstruye con tu cara. Ningún cuadro sale de tu navegador."
   },
   "building": {
-    "label": "Producto",
+    "label": "Building",
     "headline": "Y construyo <em>mis propios</em> productos.",
     "lede": "Productos que diseño, lanzo y opero yo mismo, de SaaS multi-tenant a SEO programático. Algunos están en vivo y otros siguen en el taller."
   },
   "next": {
-    "label": "Lo que sigue",
+    "label": "Next",
     "headline": "Curioso por defecto, medido por <em>resultados.</em>",
     "lede": "Laravel es mi base, el oficio de ingeniería es cómo trabajo y construir productos es hacia dónde voy. La misma persona, el mismo estándar.",
     "quote": "\"Construyo bien las partes aburridas para que las interesantes tengan una oportunidad.\"",

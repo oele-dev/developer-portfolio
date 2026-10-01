@@ -18,6 +18,8 @@ const body = Instrument_Sans({
   weight: ['400', '500', '600', '700'],
   variable: '--font-body',
   display: 'swap',
+  // next/font 14.1 ships no fallback metrics for this family.
+  adjustFontFallback: false,
 });
 
 // Only prebuilt locales are valid; anything else (e.g. /wp-login.php) is a 404, not a crash.
