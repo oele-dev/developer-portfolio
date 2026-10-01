@@ -1,38 +1,29 @@
 import { GoogleTagManager } from '@next/third-parties/google';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Instrument_Serif, IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google';
+import { Instrument_Sans } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { unstable_setRequestLocale, getMessages } from 'next-intl/server';
-import Navbar from '../components/navbar';
-import Footer from '../components/footer';
+import SiteHeader from '../components/chapters/site-header';
+import SiteFooter from '../components/chapters/site-footer';
+import ChapterObserver from '../components/chapters/chapter-observer';
+import MobileChapterNav from '../components/chapters/mobile-chapter-nav';
 import ToastProvider from '../components/toast-provider';
 import TitlePulse from '../components/title-pulse';
 import { locales } from '../../i18n';
 import '../css/globals.scss';
 
-const display = Instrument_Serif({
+const body = Instrument_Sans({
   subsets: ['latin'],
-  weight: '400',
-  style: ['normal', 'italic'],
-  variable: '--font-display',
-  display: 'swap',
-});
-
-const body = IBM_Plex_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-body',
   display: 'swap',
 });
 
-const mono = IBM_Plex_Mono({
-  subsets: ['latin'],
-  weight: ['400', '500'],
-  variable: '--font-mono',
-  display: 'swap',
-});
-
 // Only prebuilt locales are valid; anything else (e.g. /wp-login.php) is a 404, not a crash.
+export const viewport = {
+  themeColor: '#e8e3db',
+};
+
 export const dynamicParams = false;
 
 export function generateStaticParams() {
@@ -119,7 +110,7 @@ export default async function LocaleLayout({ children, params: { locale } }) {
       'https://www.linkedin.com/in/oele-dev/',
       'https://twitter.com/oele_dev',
     ],
-    jobTitle: 'Senior Laravel Engineer · Indie Maker · Mentor',
+    jobTitle: 'Software and AI Engineer, Senior Laravel Engineer, Indie Maker',
     description:
       'Senior Laravel engineer with 10+ years in the Laravel ecosystem, building multi-tenant products, Filament admin panels, and serious API integrations. AI-augmented workflow since 2023.',
     knowsAbout: [
@@ -141,7 +132,6 @@ export default async function LocaleLayout({ children, params: { locale } }) {
     ],
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Bogotá',
       addressCountry: 'Colombia',
     },
   };
@@ -149,7 +139,7 @@ export default async function LocaleLayout({ children, params: { locale } }) {
   return (
     <html
       lang={locale}
-      className={`${display.variable} ${body.variable} ${mono.variable}`}
+      className={body.variable}
     >
       <head>
         <script
@@ -157,13 +147,19 @@ export default async function LocaleLayout({ children, params: { locale } }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className="bg-paper text-ink font-body antialiased">
+      {/* data-chapter starts on the hero so the header name doesn't flash before JS runs */}
+      <body className="bg-paper text-ink font-body antialiased" data-chapter="intro" data-side="right">
         <NextIntlClientProvider messages={messages}>
+          <canvas id="stage" className="stage" aria-hidden="true" />
+          <div className="veil veil--l" aria-hidden="true" />
+          <div className="veil veil--r" aria-hidden="true" />
           <TitlePulse locale={locale} />
           <ToastProvider />
-          <Navbar />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
+          <SiteHeader locale={locale} />
+          <main className="relative z-[2]">{children}</main>
+          <SiteFooter />
+          <ChapterObserver scrollLabel={messages.nav.scroll} />
+          <MobileChapterNav />
         </NextIntlClientProvider>
         <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM} />
         <SpeedInsights />

@@ -1,58 +1,85 @@
 {
   "meta": {
-    "title": "Osmell Caicedo — Senior Laravel Engineer · Livewire, Inertia y Vue",
-    "description": "Ingeniero Laravel senior con +10 años. Descomposición de Livewire, migraciones a Inertia/Vue y modernización de legacy, además de productos multi-tenant, paneles Filament e integraciones de APIs. AI-augmented desde 2023. Disponible para contratos remotos desde Bogotá."
+    "title": "Osmell Caicedo | Ingeniero de software e IA, con Laravel en el centro",
+    "description": "Ingeniero Laravel senior con más de 10 años. Modernización de legacy, descomposición de Livewire y migraciones a Inertia/Vue, un flujo de trabajo agéntico con IA y productos propios. Disponible para contratos remotos desde Colombia."
   },
   "nav": {
-    "work": "PROYECTOS",
-    "experience": "EXPERIENCIA",
-    "about": "SOBRE MÍ",
-    "contact": "CONTACTO",
-    "resume": "CV"
+    "label": "Capítulos",
+    "foundation": "Base",
+    "craft": "Oficio",
+    "building": "Producto",
+    "next": "Lo que sigue",
+    "backToTop": "Osmell Caicedo, oele.dev, volver arriba",
+    "camera": "Prueba la cámara",
+    "cameraOn": "Cámara encendida",
+    "cameraOff": "Cámara",
+    "scroll": "Baja",
+    "screenshot": "Captura"
   },
   "hero": {
-    "eyebrow": "Osmell Caicedo",
-    "headline": "Ingeniero Laravel senior.",
-    "headlineItalic": "Indie maker.",
-    "tagline": "Construyo productos web desde Bogotá desde 2014.",
-    "ctaPrimary": "Agenda una llamada de 30 min",
-    "ctaSecondary": "Ver el CV",
-    "caption": "OSMELL CAICEDO · BOGOTÁ, CO · MMXXVI"
+    "eyebrow": "Osmell Caicedo, desde Colombia, trabajando remoto",
+    "headline": "Ingeniero de software e IA, con <em>Laravel</em> en el centro.",
+    "lede": "Construyo productos web desde 2014. Diez años rescatando y escalando sistemas Laravel, un flujo de trabajo agéntico que me hace más rápido y productos propios.",
+    "ctaPrimary": "Escríbeme para agendar una llamada",
+    "ctaSecondary": "Ver el CV"
   },
-  "shipping": {
-    "label": "01 — EN PRODUCCIÓN",
-    "title": "Ultti",
-    "subtitle": "Comercio WhatsApp multi-tenant para LATAM",
-    "description": "Plataforma para negocios de domicilio en LATAM (licorerías, cocinas ocultas, farmacias). Cada tenant tiene catálogo bajo {slug}.ultti.co, checkout por WhatsApp, panel de operador y métodos de pago por tenant (Nequi, Daviplata, Bre-B). Un solo backend en Supabase con RLS por negocio.",
-    "metricValue": "2",
-    "metricUnit": "tenants en producción",
-    "cta": "Ver ultti.co →"
+  "foundation": {
+    "label": "Base",
+    "headline": "Diez años construyendo sistemas Laravel que <em>no se rompen.</em>",
+    "lede": "Tomo aplicaciones legacy donde la validación, la presentación y la lógica de negocio están enredadas, y las llevo a Laravel moderno sin romper su comportamiento. Descomposición de Livewire, migraciones a Inertia y Vue, paneles Filament, integraciones de APIs serias y paquetes open source.",
+    "experience": "Experiencia",
+    "work": "Trabajo destacado"
   },
-  "work": {
-    "label": "02 — PROYECTOS SELECCIONADOS",
-    "intro": "Nueve proyectos entre productos, paquetes e integraciones."
+  "craft": {
+    "label": "Oficio",
+    "headline": "La versión pro de las cosas, hasta el <em>último milisegundo.</em>",
+    "lede": "Trabajo con IA desde 2023. Mido el trabajo por retorno, no por horas. Exprimo el rendimiento, corto lo que no paga y uso agentes de IA para avanzar más rápido, con la arquitectura y el criterio en mis manos.",
+    "howIWork": "Cómo trabajo",
+    "performanceTitle": "Rendimiento primero",
+    "performance": "<strong>Level60:</strong> las queries más pesadas de SQL Server pasaron de <strong>5 s a 900 ms</strong> con queries dirigidas, Redis y Octane. <strong>Malta Pharmacy:</strong> más de 800 páginas generadas en build, sin base de datos en runtime. <strong>laravel-missing-index:</strong> detecta índices faltantes antes de que lo haga producción.",
+    "agenticTitle": "Flujo de trabajo agéntico",
+    "agentic": "Claude Code con agentes propios para revisión de código, auditorías de seguridad y pruebas. Yo diseño el sistema; los agentes ejecutan y su trabajo se revisa.",
+    "aiTitle": "IA dentro de productos",
+    "ai": "<strong>Instructor Virtual</strong> califica trabajos del SENA contra rúbricas con IA, con <strong>más de 1.200 evidencias analizadas</strong>. <strong>VoiceMyGoals</strong> genera audio con voces. Este sitio publica un <link>llms.txt</link> para asistentes de IA.",
+    "tools": "Herramientas",
+    "proof": "<strong>Esta página es la prueba.</strong> {count} partículas y shaders GLSL propios, corriendo a {fps} fps. Enciende tu cámara y la escultura se reconstruye con tu cara. Ningún cuadro sale de tu navegador."
   },
-  "experience": {
-    "label": "03 — EXPERIENCIA",
-    "intro": "Diez años en equipos Laravel entre Colombia, Malta y los Estados Unidos — últimamente en modernización de legacy: descomposición de Livewire y el camino hacia Inertia."
+  "building": {
+    "label": "Producto",
+    "headline": "Y construyo <em>mis propios</em> productos.",
+    "lede": "Productos que diseño, lanzo y opero yo mismo, de SaaS multi-tenant a SEO programático. Algunos están en vivo y otros siguen en el taller."
   },
-  "about": {
-    "label": "04 — SOBRE MÍ",
-    "pullQuote": "Hago bien la parte aburrida para que la parte interesante tenga oportunidad.",
-    "body": "Soy ingeniero de software con diez años de experiencia en el ecosistema Laravel (TALL & VILT) y, más recientemente, en Next.js y Astro. Me especializo en aplicaciones multi-tenant, paneles administrativos con Filament, integraciones de API serias (Google Workspace, QuickBooks, Hotmart, MikroTik, n8n) y SEO programático a escala.\n\nLa mayor parte de mi trabajo actual es modernización de legacy: descomponer componentes Livewire sobredimensionados, sacar la lógica de negocio de las vistas y llevarla a controladores, y reconvertir lo que queda en límites orientados a props — la forma que toma un componente Vue — para que el refactor sea el camino hacia Inertia y no un desvío previo.\n\nHe trabajado con empresas de EE.UU. (Level60 Consulting · Nashville, EyeUniversal · San José) y lideré el equipo técnico de Ovy.so durante cinco años, migrando un monolito en PHP a Laravel y luego a Inertia — de la v1 a la v2, de Vue 2 a Vue 3 —, construyendo una PWA e integrando Google Workspace.\n\nAhora divido el tiempo entre contratos de cliente y mis propios productos (Ultti, Malta Pharmacy Empire, mkdn). Uso Claude Code y Cursor en mi flujo diario — son herramientas, no autores.\n\nDisponible para contratos remotos, auditorías de performance en Laravel y colaboraciones de producto."
+  "next": {
+    "label": "Lo que sigue",
+    "headline": "Curioso por defecto, medido por <em>resultados.</em>",
+    "lede": "Laravel es mi base, el oficio de ingeniería es cómo trabajo y construir productos es hacia dónde voy. La misma persona, el mismo estándar.",
+    "quote": "\"Construyo bien las partes aburridas para que las interesantes tengan una oportunidad.\"",
+    "returnTitle": "Retorno antes que moda",
+    "return": "Una herramienta nueva se gana su lugar por lo que cambia en el resultado.",
+    "teamsTitle": "Equipos a los que les importa la calidad",
+    "teams": "Contratos remotos, rescates de legacy y auditorías de rendimiento donde mover el negocio importa más que el stack.",
+    "teachTitle": "Seguir lanzando, seguir enseñando",
+    "teach": "Hacer crecer mis productos y seguir mentoreando a los próximos desarrolladores.",
+    "contactBlurb": "Disponible para contratos remotos y colaboraciones de producto. Suelo responder en menos de 24 horas."
   },
   "contact": {
-    "label": "05 — CONTACTO",
-    "blurb": "Disponible para contratos remotos y colaboraciones de producto. Suelo responder en menos de 24 horas.",
     "formName": "Tu nombre",
     "formEmail": "Tu correo",
     "formMessage": "¿En qué estás pensando?",
     "formSubmit": "Enviar",
-    "formSuccess": "Listo. Te respondo en menos de 24h.",
-    "formError": "Algo falló. Escríbeme directo."
+    "formSuccess": "Listo. Te respondo en menos de 24 h.",
+    "formError": "Algo falló. Escríbeme directo.",
+    "formEmailError": "Correo inválido.",
+    "formRequired": "Todos los campos son obligatorios."
+  },
+  "sculpture": {
+    "cameraHttps": "La cámara necesita https. Te muestro mi cara.",
+    "cameraOnToast": "Ese eres tú. No se graba ni se envía nada.",
+    "cameraBlocked": "El acceso a la cámara fue bloqueado. Te muestro mi cara.",
+    "cameraOffToast": "Cámara apagada."
   },
   "footer": {
-    "shipping": "ENVIANDO DESDE BOGOTÁ",
-    "available": "DISPONIBLE PARA TRABAJO REMOTO"
+    "line": "Osmell Caicedo, construyendo desde Colombia. Disponible para trabajo remoto.",
+    "forAgents": "Para agentes de IA"
   }
 }

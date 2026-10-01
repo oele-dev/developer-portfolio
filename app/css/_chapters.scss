@@ -1,0 +1,170 @@
+// Effects that utilities can't express cleanly: veils, side flips, the header name reveal,
+// the camera sheen, screenshot disclosures and the mobile chapter switcher.
+
+// --- Stage: fixed sculpture canvas + readability veils that follow the sculpture's side
+.stage {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+}
+
+.veil {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.8s ease;
+
+  &--l { background: linear-gradient(90deg, color-mix(in srgb, var(--paper) 88%, transparent) 0%, color-mix(in srgb, var(--paper) 60%, transparent) 40%, transparent 62%); }
+  &--r { background: linear-gradient(270deg, color-mix(in srgb, var(--paper) 88%, transparent) 0%, color-mix(in srgb, var(--paper) 60%, transparent) 40%, transparent 62%); opacity: 0; }
+}
+body[data-side='left'] .veil--l { opacity: 0; }
+body[data-side='left'] .veil--r { opacity: 1; }
+
+// Without WebGL the page is plain text on the page background.
+.no-3d .stage,
+.no-3d .veil,
+.no-3d .js-3d-only { display: none; }
+
+// --- Chapters: copy on the side opposite the sculpture
+.chapter {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px clamp(16px, 5vw, 64px);
+
+  &--flip { justify-content: flex-end; }
+}
+
+// --- Header: the hero shows the name big, so the header reveals it after the hero
+.logo-name {
+  display: inline-grid;
+  grid-template-columns: 0fr;
+  opacity: 0;
+  transition: grid-template-columns 0.5s var(--ease-out), opacity 0.3s ease;
+
+  > span { overflow: hidden; min-width: 0; }
+}
+body:not([data-chapter='intro']) .logo-name {
+  grid-template-columns: 1fr;
+  opacity: 1;
+}
+
+.toc-link[aria-current='true']::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-right: 8px;
+}
+
+// Camera button: three sheens to draw the eye, retired early on first click.
+.cam {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -60%;
+    width: 40%;
+    pointer-events: none;
+    background: linear-gradient(100deg, transparent, color-mix(in srgb, var(--accent) 35%, transparent), transparent);
+    transform: skewX(-20deg);
+    animation: sheen 4s ease-in-out 1.2s 3;
+  }
+
+  &.is-tried::before { display: none; }
+}
+@keyframes sheen {
+  0% { left: -60%; }
+  30%, 100% { left: 130%; }
+}
+
+.read-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  z-index: 60;
+  background: var(--accent);
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+.scroll-hint i {
+  width: 1px;
+  height: 28px;
+  background: linear-gradient(var(--accent), transparent);
+  animation: drip 1.8s ease-in-out infinite;
+  transform-origin: top;
+}
+@keyframes drip {
+  0% { transform: scaleY(0); }
+  50% { transform: scaleY(1); }
+  100% { transform: scaleY(1); opacity: 0; }
+}
+
+// --- Screenshot disclosure: native <details>, works without JS
+.shot {
+  summary {
+    list-style: none;
+    cursor: pointer;
+    &::-webkit-details-marker { display: none; }
+  }
+  summary svg { transition: transform 0.2s var(--ease-out); }
+  &[open] summary svg { transform: rotate(180deg); }
+}
+
+// --- Mobile chapter switcher
+.chap-menu {
+  opacity: 0;
+  transform: translate(-50%, 6px);
+  pointer-events: none;
+  transition: opacity 0.18s var(--ease-out), transform 0.18s var(--ease-out);
+
+  &.is-open {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    pointer-events: auto;
+  }
+}
+.chap-btn svg { transition: transform 0.2s var(--ease-out); }
+.chap-btn[aria-expanded='true'] svg { transform: rotate(180deg); }
+
+@media (max-width: 767px) {
+  .veil--l,
+  .veil--r {
+    background: linear-gradient(0deg, color-mix(in srgb, var(--paper) 60%, transparent), color-mix(in srgb, var(--paper) 20%, transparent));
+    opacity: 1 !important;
+  }
+  .chapter,
+  .chapter--flip {
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 46vh 12px 96px;
+    min-height: auto;
+  }
+  // Copy scrolls over the fixed sculpture, so it gets a readable surface.
+  .chapter-copy {
+    background: color-mix(in srgb, var(--paper) 78%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--rule);
+    border-radius: 30px;
+    padding: 24px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-name { transition: none; }
+  .cam::before { display: none; }
+  .scroll-hint i { animation: none; }
+}
