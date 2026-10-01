@@ -7,3 +7,12 @@ export const SCULPTURE_READY = 'sculpture:ready';        // detail: { count }
 export const SCULPTURE_FPS = 'sculpture:fps';            // detail: { fps }
 
 export const emit = (name, detail) => window.dispatchEvent(new CustomEvent(name, { detail }));
+
+// Analytics: GTM already listens to window.dataLayer. Each chapter is reported once per visit.
+const reported = new Set();
+export const track = (event, params = {}) => {
+  const key = `${event}:${JSON.stringify(params)}`;
+  if (reported.has(key)) return;
+  reported.add(key);
+  (window.dataLayer = window.dataLayer || []).push({ event, ...params });
+};

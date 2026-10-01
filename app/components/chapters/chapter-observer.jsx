@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { CHAPTERS } from '@/utils/data/chapters';
-import { CHAPTER_CHANGE, emit } from './events';
+import { CHAPTER_CHANGE, emit, track } from './events';
 
 // Marks the chapter crossing the middle of the viewport as current, and drives the reading bar.
 export default function ChapterObserver({ scrollLabel }) {
@@ -20,6 +20,7 @@ export default function ChapterObserver({ scrollLabel }) {
       document.body.dataset.chapter = id;
       document.body.dataset.side = narrow.matches ? 'right' : chapter.side;
       emit(CHAPTER_CHANGE, { id });
+      track('chapter_view', { chapter: id });
     };
 
     const observer = new IntersectionObserver(

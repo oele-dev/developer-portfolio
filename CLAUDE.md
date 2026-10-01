@@ -5,145 +5,96 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Development Commands
 
 ```bash
-# Development
-npm run dev          # Start development server at http://localhost:3000
-
-# Production
-npm run build        # Create production build
-npm start            # Run production server
-
-# Code Quality
-npm run lint         # Run ESLint
+npm run dev          # Development server at http://localhost:3000
+npm run build        # Production build
+npm start            # Run the production build
+npm run lint         # ESLint
 ```
 
 ## Architecture Overview
 
-This is a Next.js 14 developer portfolio using the App Router with a data-driven architecture. All portfolio content (projects, skills, experience, education) is stored as JavaScript objects in `/utils/data/` - there is no backend or database.
+Next.js 14 App Router portfolio, English and Spanish via `next-intl` (`/` and `/es`). No backend: content lives in `utils/data/` and `messages/`.
 
-### Project Structure
+The homepage tells one story in four chapters after a hero: **Foundation** (Laravel experience), **Craft** (how I work: performance and AI), **Building** (my own products) and **Next** (goals and contact). A bronze particle sculpture sits behind the copy, built from my portrait in the hero and changing shape per chapter.
 
 ```
 app/
-├── components/          # React components organized by feature
-│   ├── navbar.jsx
-│   ├── footer.jsx
-│   ├── helper/         # Reusable utilities (GlowCard, AnimationLottie)
-│   └── homepage/       # Section components (hero, about, experience, etc.)
-├── css/                # Global SCSS styles
-│   ├── globals.scss    # Tailwind directives + custom CSS variables
-│   └── card.scss       # GlowCard effects (conic gradients, hover animations)
-├── layout.js           # Root layout with GTM, ToastContainer, Speed Insights
-└── page.js             # Homepage - orchestrates all sections
+├── [locale]/
+│   ├── layout.js          # Font, metadata, JSON-LD, stage canvas, header, footer, client islands
+│   └── page.js            # Hero + four ChapterSection blocks
+├── components/
+│   ├── chapters/
+│   │   ├── chapter-section.jsx     # Server. One chapter; the hero gets the only <h1>
+│   │   ├── item-list.jsx           # Server. Experience/project/principle rows with status pill
+│   │   ├── screenshot.jsx          # Server. <details> + next/image disclosure
+│   │   ├── site-header.jsx         # Client. Logo with name reveal, chapter links, locale, camera button
+│   │   ├── mobile-chapter-nav.jsx  # Client. Bottom pill + jump menu on mobile
+│   │   ├── chapter-observer.jsx    # Client. Active chapter, reading bar, GTM chapter events
+│   │   ├── proof-card.jsx          # Client. Live particle count and fps, only once the sculpture runs
+│   │   ├── contact-form.jsx        # Client. EmailJS form
+│   │   ├── sculpture.jsx           # Client. Loads the engine on idle; adds `no-3d` to <body> on failure
+│   │   ├── sculpture-engine.js     # Three.js engine (framework-free)
+│   │   ├── sculpture-shapes.js     # Per-chapter grayscale depth maps
+│   │   └── events.js               # DOM event names + GTM `track()`
+│   ├── protected-email.jsx         # Joins the address after mount so scrapers miss it
+│   ├── title-pulse.jsx
+│   └── toast-provider.jsx
+└── css/
+    ├── globals.scss       # Color tokens, base styles
+    └── _chapters.scss     # Effects utilities can't express: veils, side flips, sheen, disclosures
 
-utils/
-├── data/               # Portfolio content (edit these to update content)
-│   ├── personal-data.js    # Name, email, social links, resume URL
-│   ├── projects-data.js    # Project objects with name, description, tools, images
-│   ├── skills.js           # Array of skill names
-│   ├── experience.js       # Work experience entries
-│   └── educations.js       # Education entries
-├── skill-image.js      # Maps skill names to SVG icons (50+ icons)
-└── check-email.js      # Email validation regex
+utils/data/
+├── chapters.js           # Chapter order, sculpture side and motion per chapter
+├── projects-data.js      # Projects with `chapter`, `status`, `screenshot`, EN/ES copy
+├── experience.js         # Jobs with short `summary` (homepage) and long `description`
+└── personal-data.js      # Name, email parts, socials, resume URL
 
-public/
-├── image/              # Project screenshots referenced in projects-data.js
-├── lottie/             # Lottie animation JSON files
-└── svg/                # SVG icons organized by category (skills/, education/, etc.)
+messages/en.json, es.json # All UI copy; headlines use <em> for the cobalt phrase
+public/image/             # Screenshots and portrait.jpg (sculpture source)
+public/llms.txt           # Plain-text summary for AI agents; keep in sync with the page
 ```
 
-### Key Architectural Patterns
+### Key Patterns
 
-**Data-Driven Content**: To update portfolio content, edit the JavaScript objects in `/utils/data/`. Components import and render this data.
+**Chapters are server components; interactivity lives in small client islands.** The page works without JavaScript; JS adds the active-chapter state, the mobile menu and the sculpture.
 
-**Hybrid Styling**: Uses Tailwind CSS for layouts and utilities, SCSS for complex effects (glow cards, gradients). Custom CSS variables in `globals.scss` control colors and positioning.
+**Islands talk through DOM events, not a React provider** (`app/components/chapters/events.js`). `ChapterObserver` emits `chapter:change`; the header, mobile nav and sculpture listen. The camera button emits `sculpture:toggle-camera`; the engine answers with `sculpture:camera`. No island imports another, so the sculpture can fail without breaking navigation.
 
-**Client vs Server Components**: Most interactive components use `"use client"` directive (forms, animations, mouse tracking). The homepage is a server component.
+**The sculpture is optional.** `sculpture.jsx` dynamic-imports the engine on `requestIdleCallback`, so text paints first and Three.js ships in its own chunk. Any error adds `no-3d` to `<body>`, which hides the canvas, veils and camera button.
 
-**Component Reusability**:
-- `GlowCard` (app/components/helper/glow-card.jsx): Wraps content with mouse-tracking glow effect
-- `AnimationLottie` (app/components/helper/animation-lottie.jsx): Standardized Lottie animation wrapper
-
-**Image Organization**: Project images are imported in `projects-data.js` from `/public/image/`. Next.js Image component handles optimization.
+**Sculpture rendering.** Each particle samples one pixel of a 180×180 grid (120 on mobile). Brightness drives color and relief. Ink (dot size and opacity) follows darkness for photos and brightness for chapter shapes, so a portrait reads like an engraving on the light background. Colors come from the `--sculpt-*` CSS tokens.
 
 ### Styling System
 
-**Color Scheme** (defined in `globals.scss`):
-- Primary accent: `#16f2b3` (cyan-green)
-- Secondary: `pink-500`, `violet-600`
-- Background: `#0d1224` (dark navy)
-- Text: white with gray accents
+Tailwind for layout and typography, SCSS for effects. Light theme only for now.
 
-**Responsive Breakpoints**: Uses Tailwind defaults plus custom `4k` breakpoint (1980px) in `tailwind.config.js`.
+- Background travertine `--paper #e8e3db`, text `--ink #1c1917`, body `--ink-body #44403c`, muted `--ink-soft #615a53`
+- Accent cobalt `--accent #2340ff`, used for one phrase per headline, links, chapter numbers and the "Live" pill
+- Sculpture bronze `--sculpt-lo #3a2618` to `--sculpt-hi #a87a45`, always darker than the background
+- Font: Instrument Sans via `next/font`, 17px base, perfect-fourth scale
+- Tailwind is 3.3: use arbitrary values for `text-wrap` and for opacity on CSS-variable colors (`color-mix(...)`)
 
-**Advanced Effects**: The GlowCard component uses CSS custom properties (`--x`, `--y`, `--glow-left`, `--glow-top`) updated via pointer events for interactive hover effects.
+## Common Tasks
+
+### Add a project
+1. Add a 16:10 screenshot to `public/image/` (optional).
+2. Add an entry to `utils/data/projects-data.js` with `chapter`, `status`, `statusLabel`, `url`, `name`, `summary`, `alt` and `screenshot: { src, width, height }`. Write both `en` and `es`.
+3. If it is a product, add it to `public/llms.txt` under "My products".
+
+### Change chapter copy
+Edit `messages/en.json` and `messages/es.json`. Wrap the highlighted phrase in `<em>` inside the headline.
+
+### Change a chapter's sculpture shape or motion
+Shapes: `sculpture-shapes.js` (draw bright = closer). Motion and side: `utils/data/chapters.js`.
 
 ## Third-Party Integrations
 
-### EmailJS (Contact Form)
-Contact form uses EmailJS for serverless email sending. Required environment variables:
-```
-NEXT_PUBLIC_EMAILJS_SERVICE_ID
-NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-```
-
-See `.env.example` for template. Contact form is in `app/components/homepage/contact/contact-form.jsx`.
-
-### Analytics & Performance
-- **Google Tag Manager**: Configured in `layout.js` via `NEXT_PUBLIC_GTM` env variable
-- **Vercel Speed Insights**: Auto-included in layout
-
-### Dev.to Blog Integration
-Blog section fetches posts from Dev.to API using `devUsername` from `personal-data.js`.
-
-## Common Development Tasks
-
-### Adding a New Project
-1. Add project image to `/public/image/`
-2. Import image at top of `utils/data/projects-data.js`
-3. Add project object to `projectsData` array following existing schema:
-   ```javascript
-   {
-     id: <next_id>,
-     name: 'Project Name',
-     description: 'Description',
-     tools: ['Tech1', 'Tech2'],
-     role: 'Your Role',
-     code: 'github_url',  // or '' if private
-     demo: 'demo_url',    // or '' if none
-     image: importedImage,
-   }
-   ```
-
-### Adding a New Skill
-1. Add skill name to `utils/data/skills.js` array
-2. Ensure corresponding SVG exists in `/public/svg/skills/` (filename should match skill name, lowercase)
-3. If icon doesn't exist in `utils/skill-image.js`, add case to switch statement
-
-### Updating Personal Information
-Edit `utils/data/personal-data.js` - changes reflect immediately on hero, about, and contact sections.
-
-### Modifying Styles
-- **Layout/spacing**: Use Tailwind utilities in component JSX
-- **Complex effects**: Edit `app/css/card.scss` or `app/css/globals.scss`
-- **Colors**: Update CSS variables in `globals.scss` root/body selectors
-
-## Image Domains
-External images are configured in `next.config.js`:
-- `res.cloudinary.com` (for external hosted images)
-- `media.dev.to` (for blog post images)
-
-Add additional domains here if needed for Next.js Image component optimization.
+- **EmailJS** (contact form): `NEXT_PUBLIC_EMAILJS_SERVICE_ID`, `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`, `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`. See `.env.example`.
+- **Google Tag Manager**: `NEXT_PUBLIC_GTM`. The page pushes `chapter_view` (once per chapter) and `camera_on` to `dataLayer`.
+- **Vercel Speed Insights**: included in the layout.
 
 ## Path Aliases
-`jsconfig.json` configures `@/` alias pointing to project root. Use `@/utils/data/personal-data` instead of relative paths.
-
-## Notes
-- This portfolio has no light mode - only dark theme
-- No API routes or backend - all content is static at build time (except Dev.to blog)
-- Skills section uses `react-fast-marquee` for horizontal scrolling
-- Projects section uses sticky positioning with staggered z-index
-- Lottie animations located in `/public/lottie/` are referenced by filename in section components
+`@/` points to the project root.
 
 ## Resume (CV)
-A print-ready, self-contained HTML resume lives in `cv/osmell-caicedo-cv.html` (Resuminator-style two-column clone). It is intentionally **not web-published** — it lives outside `app/` and `public/`, so Next.js never serves or bundles it. To export a PDF, open it in Chrome and print to PDF; see `cv/README.md` for details.
+A print-ready, self-contained HTML resume lives in `cv/osmell-caicedo-cv.html`. It is intentionally **not web-published**: it lives outside `app/` and `public/`, so Next.js never serves or bundles it. To export a PDF, open it in Chrome and print to PDF; see `cv/README.md`.
