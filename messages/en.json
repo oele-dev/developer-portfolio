@@ -1,58 +1,85 @@
 {
   "meta": {
-    "title": "Osmell Caicedo — Senior Laravel Engineer · Livewire, Inertia & Vue",
-    "description": "Senior Laravel engineer with 10+ years. Livewire decomposition, Inertia/Vue migrations and legacy modernization, plus multi-tenant products, Filament admin panels and serious API integrations. AI-augmented since 2023. Available for remote contracts from Bogotá."
+    "title": "Osmell Caicedo | Software and AI engineer, Laravel at the core",
+    "description": "Senior Laravel engineer with 10+ years. Legacy modernization, Livewire decomposition and Inertia/Vue migrations, an agentic AI workflow, and products of my own. Available for remote contracts from Colombia."
   },
   "nav": {
-    "work": "WORK",
-    "experience": "EXPERIENCE",
-    "about": "ABOUT",
-    "contact": "CONTACT",
-    "resume": "RÉSUMÉ"
+    "label": "Chapters",
+    "foundation": "Foundation",
+    "craft": "Craft",
+    "building": "Building",
+    "next": "Next",
+    "backToTop": "Osmell Caicedo, oele.dev, back to top",
+    "camera": "Try the camera",
+    "cameraOn": "Camera on",
+    "cameraOff": "Camera",
+    "scroll": "Scroll",
+    "screenshot": "Screenshot"
   },
   "hero": {
-    "eyebrow": "Osmell Caicedo",
-    "headline": "Senior Laravel engineer.",
-    "headlineItalic": "Indie maker.",
-    "tagline": "Shipping web products from Bogotá since 2014.",
-    "ctaPrimary": "Book a 30-min call",
-    "ctaSecondary": "Read the résumé",
-    "caption": "OSMELL CAICEDO · BOGOTÁ, CO · MMXXVI"
+    "eyebrow": "Osmell Caicedo, based in Colombia, working remotely",
+    "headline": "Software and AI engineer, with <em>Laravel</em> at the core.",
+    "lede": "Shipping web products since 2014. Ten years rescuing and scaling Laravel systems, an agentic workflow that makes me faster, and products of my own.",
+    "ctaPrimary": "Email me to book a call",
+    "ctaSecondary": "Read the résumé"
   },
-  "shipping": {
-    "label": "01 — CURRENTLY SHIPPING",
-    "title": "Ultti",
-    "subtitle": "Multi-tenant WhatsApp commerce for LATAM",
-    "description": "A platform for delivery businesses (liquor stores, dark kitchens, pharmacies). Each tenant gets a branded catalog under {slug}.ultti.co, a WhatsApp checkout, an operator panel and per-tenant payment methods (Nequi, Daviplata, Bre-B). Single Supabase backend with RLS scoped per business.",
-    "metricValue": "2",
-    "metricUnit": "tenants live",
-    "cta": "See ultti.co →"
+  "foundation": {
+    "label": "Foundation",
+    "headline": "Ten years building Laravel systems that <em>don't break.</em>",
+    "lede": "I take legacy apps where validation, presentation and business logic are tangled together, and move them to modern Laravel without breaking behavior. Livewire decomposition, Inertia and Vue migrations, Filament panels, serious API integrations, open-source packages.",
+    "experience": "Experience",
+    "work": "Selected work"
   },
-  "work": {
-    "label": "02 — SELECTED WORK",
-    "intro": "Nine projects across products, packages and integrations."
+  "craft": {
+    "label": "Craft",
+    "headline": "The pro version of things, down to the <em>last millisecond.</em>",
+    "lede": "AI-augmented since 2023. I measure work by return, not by hours. I squeeze performance, cut what doesn't pay off, and use AI agents to move faster, with architecture and judgment still in my hands.",
+    "howIWork": "How I work",
+    "performanceTitle": "Performance first",
+    "performance": "<strong>Level60:</strong> heaviest SQL Server queries cut from <strong>5 s to 900 ms</strong> with targeted queries, Redis and Octane. <strong>Malta Pharmacy:</strong> 800+ pages generated at build time, zero runtime database. <strong>laravel-missing-index:</strong> catches missing indexes before production does.",
+    "agenticTitle": "Agentic workflow",
+    "agentic": "Claude Code with custom agents for code review, security audits and testing. I design the system; agents execute and get reviewed.",
+    "aiTitle": "AI inside products",
+    "ai": "<strong>Instructor Virtual</strong> grades SENA coursework against evaluation rubrics with AI, <strong>1,200+ evidences analyzed</strong> so far. <strong>VoiceMyGoals</strong> generates voice audio. This site serves an <link>llms.txt</link> for AI assistants.",
+    "tools": "Tools",
+    "proof": "<strong>This page is the proof.</strong> {count} particles and custom GLSL shaders, running at {fps} fps. Turn on your camera and the sculpture rebuilds from your face. No frame ever leaves your browser."
   },
-  "experience": {
-    "label": "03 — EXPERIENCE",
-    "intro": "Ten years across Laravel teams in Colombia, Malta and the US — lately on legacy modernization: Livewire decomposition and the road to Inertia."
+  "building": {
+    "label": "Building",
+    "headline": "And I build <em>my own</em> products.",
+    "lede": "Products I design, ship and run myself, from multi-tenant SaaS to programmatic SEO. Some are live, some are on the workbench."
   },
-  "about": {
-    "label": "04 — ABOUT",
-    "pullQuote": "I build the boring parts well so the interesting parts get a chance.",
-    "body": "I'm a software engineer with ten years of experience in the Laravel ecosystem (TALL & VILT) and, more recently, Next.js and Astro. I specialize in multi-tenant applications, Filament admin panels, serious API integrations (Google Workspace, QuickBooks, Hotmart, MikroTik, n8n) and programmatic SEO at scale.\n\nMost of my current work is legacy modernization: decomposing oversized Livewire components, moving business logic out of views and into controllers, and reshaping what is left into prop-driven boundaries — the form a Vue component takes — so the refactor becomes the path toward Inertia rather than a detour before it.\n\nI've worked with US companies (Level60 Consulting · Nashville, EyeUniversal · San José) and led the technical team at Ovy.so for five years, migrating a PHP monolith to Laravel and then to Inertia — v1 through v2, Vue 2 through Vue 3 — building a PWA, and shipping a Google Workspace integration.\n\nNow I split my time between client contracts and shipping my own products (Ultti, Malta Pharmacy Empire, mkdn). I use Claude Code and Cursor as part of my daily workflow — they're tools, not authors.\n\nAvailable for remote contracts, Laravel performance audits, and product collaborations."
+  "next": {
+    "label": "Next",
+    "headline": "Curious by default, measured by <em>results.</em>",
+    "lede": "Laravel is my foundation, engineering craft is how I work, building products is where I'm going. Same person, same standard.",
+    "quote": "\"I build the boring parts well so the interesting parts get a chance.\"",
+    "returnTitle": "Return over hype",
+    "return": "New tools earn their place by what they change in the result.",
+    "teamsTitle": "Teams that care about quality",
+    "teams": "Remote contracts, legacy rescues and performance audits where moving the business matters more than the stack.",
+    "teachTitle": "Keep shipping, keep teaching",
+    "teach": "Grow my own products and keep mentoring the next developers.",
+    "contactBlurb": "Open to remote contracts and product collaborations. I usually reply within 24 hours."
   },
   "contact": {
-    "label": "05 — CONTACT",
-    "blurb": "Open to remote contracts and product collaborations. I usually reply within 24 hours.",
     "formName": "Your name",
     "formEmail": "Your email",
     "formMessage": "What's on your mind?",
     "formSubmit": "Send",
     "formSuccess": "Got it. I'll reply within 24h.",
-    "formError": "Something broke. Email me directly."
+    "formError": "Something broke. Email me directly.",
+    "formEmailError": "Please provide a valid email.",
+    "formRequired": "All fields are required."
+  },
+  "sculpture": {
+    "cameraHttps": "The camera needs https. Showing my face instead.",
+    "cameraOnToast": "That's you. Nothing is recorded or sent.",
+    "cameraBlocked": "Camera access was blocked. Showing my face instead.",
+    "cameraOffToast": "Camera off."
   },
   "footer": {
-    "shipping": "SHIPPING FROM BOGOTÁ",
-    "available": "AVAILABLE FOR REMOTE WORK"
+    "line": "Osmell Caicedo, building from Colombia. Available for remote work.",
+    "forAgents": "For AI agents"
   }
 }
