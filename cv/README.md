@@ -6,18 +6,18 @@ Standalone, print-ready HTML resumes for Osmell Caicedo.
 
 | File | Pages | Purpose |
 | --- | --- | --- |
-| `osmell-caicedo-cv.html` | 1 | General resume, full contact details. Follows the site's four chapters (Foundation, Craft, Building, Next) and its travertine and cobalt identity. |
+| `osmell-caicedo-cv.html` | 2 | General resume, published on the site. Follows the site's four chapters (Foundation, Craft, Building, Next), merges the detail from the Inertia/Vue variant, and shows the email obfuscated. |
 | `osmell-caicedo-cv-upwork.html` | 1 | Same content without contact details — Upwork forbids direct contact info. |
 | `osmell-caicedo-cv-inertia-vue.html` | 2 | Role-targeted resume: Livewire decomposition, Inertia/Vue migrations, legacy modernization. Experience-dominant, full-width sections, automatic print pagination. Vertical rhythm is controlled by `--sp-section` / `--sp-job` / `--sp-bullet`. |
 
-## Not web-published
+## Publishing
 
-These files live in `cv/`, outside `app/` and `public/`. Next.js only serves files under those two directories, so none of them is bundled, routed, or deployed by the portfolio app. They are local, static assets you open directly in a browser — nothing in the build pipeline references them.
+The general resume is the source of `public/osmell-caicedo-cv.pdf`, which the site links as "Read the résumé". After editing it, print it to PDF (steps below) and replace that file. The HTML sources themselves stay unpublished. These files live in `cv/`, outside `app/` and `public/`. Next.js only serves files under those two directories, so none of them is bundled, routed, or deployed by the portfolio app. They are local, static assets you open directly in a browser — nothing in the build pipeline references them.
 
 ## How to edit
 
 - **Content**: edit the markup directly inside the variant file. Sections are numbered `.section` blocks built from repeatable `.entry`, `ul.bullets` and `.skill-grid` markup — copy an existing block to add an entry.
-- **Design tokens**: at the top of the `<style>` block, under `:root`, as CSS custom properties mirrored from `app/css/globals.scss` (`--paper`, `--ink`, `--ink-body`, `--ink-soft`, `--rule`, `--accent`, `--font`, plus page size and margin). The general resume prints on the lighter surface tone so it doesn't use much ink. The Upwork and Inertia/Vue variants still use the previous identity.
+- **Design tokens**: at the top of the `<style>` block, under `:root`, as CSS custom properties mirrored from `app/css/globals.scss` (`--sheet`, `--ink`, `--ink-body`, `--ink-soft`, `--rule`, `--accent`, `--font`). The general resume shows a light sheet on screen and prints on white; move content between its two pages with `--sp-chapter`, `--sp-job` and `--sp-bullet`. The Upwork and Inertia/Vue variants still use the previous identity.
 
 ## How to export a PDF
 

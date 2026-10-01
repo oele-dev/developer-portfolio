@@ -22,5 +22,6 @@ export const personalData = {
   stackOverflow: '',
   leetcode: '',
   devUsername: 'oele-dev',
-  resume: 'https://drive.google.com/file/d/12u8O0nGnRbQDoxpcI5l2SBqZDqbgmouc/view?usp=sharing',
+  // Exported from cv/osmell-caicedo-cv.html (print to PDF) and committed to public/.
+  resume: '/osmell-caicedo-cv.pdf',
 };

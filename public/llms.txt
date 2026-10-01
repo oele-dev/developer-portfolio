@@ -6,7 +6,7 @@ The site is a single page in English at https://oele.dev and in Spanish at https
 
 - [Portfolio (English)](https://oele.dev): Four chapters. Foundation covers the Laravel experience, Craft how I work (performance and AI), Building my own products, and Next what I'm after and how to reach me
 - [Portfolio (Spanish)](https://oele.dev/es): Same content in Spanish
-- [Resume](https://drive.google.com/file/d/12u8O0nGnRbQDoxpcI5l2SBqZDqbgmouc/view?usp=sharing): Full CV (PDF)
+- [Resume](https://oele.dev/osmell-caicedo-cv.pdf): Full CV (PDF, two pages), organized in the same four chapters as the site
 
 ## My products
 
