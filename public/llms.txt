@@ -1,28 +1,31 @@
 # Osmell Caicedo (oele.dev)
 
-> Senior Laravel engineer, indie maker and mentor. Shipping web products from Bogotá, Colombia since 2014, AI-augmented since 2023 (Claude Code, Cursor). Main work is Livewire decomposition, Inertia/Vue migrations and modernizing legacy Laravel apps without changing how they behave. Available for remote contracts, Laravel performance audits and product collaborations.
+> Software and AI engineer with Laravel at the core, indie maker and mentor. Shipping web products from Colombia since 2014, AI-augmented since 2023 (Claude Code with custom agents, Cursor). Main work is Livewire decomposition, Inertia/Vue migrations and modernizing legacy Laravel apps without changing how they behave. Available for remote contracts, Laravel performance audits and product collaborations.
 
 The site is a single page in English at https://oele.dev and in Spanish at https://oele.dev/es. To book a 30-minute call or get in touch, email hola [at] oele [dot] dev. Replies usually come within 24 hours.
 
-- [Portfolio (English)](https://oele.dev): Currently shipping, selected work, experience, about and contact
+- [Portfolio (English)](https://oele.dev): Four chapters. Foundation covers the Laravel experience, Craft how I work (performance and AI), Building my own products, and Next what I'm after and how to reach me
 - [Portfolio (Spanish)](https://oele.dev/es): Same content in Spanish
 - [Resume](https://drive.google.com/file/d/12u8O0nGnRbQDoxpcI5l2SBqZDqbgmouc/view?usp=sharing): Full CV (PDF)
 
-## Currently shipping
+## My products
 
-- [Ultti](https://ultti.co): Multi-tenant WhatsApp commerce for delivery businesses in LATAM (liquor stores, dark kitchens, pharmacies). Each tenant gets a branded catalog under {slug}.ultti.co, a WhatsApp checkout, an operator panel and its own payment methods (Nequi, Daviplata, Bre-B). One Supabase backend with row-level security scoped per business.
-
-## Selected work
-
+- [Ultti](https://ultti.co): A delivery business's whole catalog in one link. Customers build an order that lands on WhatsApp with products, address and payment method, ready to dispatch. No payment gateway and no commissions. Each business gets a branded catalog under {slug}.ultti.co and an operator panel, all on one Supabase backend with row-level security per business. Two businesses live.
+- [Instructor Virtual](https://instructorvirtual.co): Chrome extension for SENA instructors. It ranks pending coursework by urgency, flags forum questions unanswered for 24+ hours and lists deadlines for the next 7 days. The Pro plan grades coursework against SENA evaluation rubrics with AI; 1,200+ evidences analyzed so far.
 - [Malta Pharmacy Empire](https://malta-pharmacy.com): Programmatic SEO directory for Malta. 800+ static pages generated at build time from SQLite, with JSON-LD, sitemaps and PWA support. No database at runtime. Next.js 15, TypeScript, Tailwind. Solo founder and developer.
+- [VoiceMyGoals](https://voicemygoals.vercel.app): Turns written goals into affirmation audio files, with several AI voices and 432Hz background music.
+- [Corre Conmigo](https://correconmigo.app) (beta): Family and friends record short voice messages that play in a runner's headphones during a race, along with strategy reminders read out every kilometer. Installable web app for iPhone and Android, with distance from GPS or pace.
+- [FunAudios](https://funaudios.app) (beta): Funny audio clips you tap and send to WhatsApp as voice notes instead of stickers.
+
+## Client and open-source work
+
 - [mkdn](https://github.com/oele-dev/mkdn): Node.js CLI and library, published on npm, that converts PDF, DOCX, Excel, HTML and images to Markdown via Cloudflare Workers AI. Zero runtime dependencies.
 - [laravel-missing-index](https://github.com/oele-dev/laravel-missing-index): Laravel package that runs EXPLAIN on every query in development, flags full table scans and missing indexes, and prints the CREATE INDEX statement that fixes them. Runs only in local and testing environments by default.
 - [vilt-test](https://github.com/oele-dev/vilt-test): MIT starter kit for Vue, Inertia.js, Laravel and Tailwind, with Vite and PHPUnit configured.
 - QuickBooks and Hotmart billing automation (private client work): Hotmart webhooks go to queued jobs on Redis, monitored with Horizon. Jobs are idempotent and safe to retry, so a purchase is never invoiced twice. TALL stack with Filament as the operator panel.
 - [Run Layout Tool](https://runlayouttool.com): VILT app where contractors design rainwater gutter runs. It picks the parts that fit a given length and depth, draws the run as an interactive diagram and prices the quote. Generates technical PDFs with Puppeteer and emails them to the client.
 - [Google Workspace to Laravel integration](https://ovy.co): PHP package connecting Meet, Classroom, Calendar and Accounts to Laravel. Runs virtual classrooms in production with one-click Meet and passwordless sign-in.
-- [Dr. Edicxon Gelviz](https://edicxongelviz.com): Medical SEO site for an orthopedic surgeon in Cúcuta, Colombia, with landing pages for hip and knee replacement. Astro, Tailwind, JSON-LD Physician and MedicalProcedure schemas.
-- [VoiceMyGoals](https://voicemygoals.vercel.app): Turns written goals into affirmation audio files, with several AI voices and 432Hz background music.
+- [Dr. Edicxon Gelviz](https://edicxongelviz.com): Medical SEO and lead generation for an orthopedic surgeon in Cúcuta, Colombia, with landing pages for hip and knee replacement. Astro, Tailwind, JSON-LD Physician and MedicalProcedure schemas.
 
 ## Experience
 
@@ -35,7 +38,7 @@ Ten years on Laravel teams in Colombia, Malta and the US.
 
 ## About
 
-I build multi-tenant applications, Filament admin panels and API integrations (Google Workspace, QuickBooks, Hotmart, MikroTik, n8n) with async work on Redis queues monitored by Horizon. I also do programmatic SEO at scale. I split my time between client contracts and my own products (Ultti, Malta Pharmacy Empire, mkdn), and I still mentor junior developers.
+I build multi-tenant applications, Filament admin panels and API integrations (Google Workspace, QuickBooks, Hotmart, MikroTik, n8n) with async work on Redis queues monitored by Horizon. I also do programmatic SEO at scale. I split my time between client contracts and my own products (Ultti, Instructor Virtual, Malta Pharmacy Empire, mkdn), and I still mentor junior developers.
 
 ## Optional
 

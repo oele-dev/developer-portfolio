@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { toast } from 'react-toastify';
-import { CAMERA_STATE, CHAPTER_CHANGE, SCULPTURE_FPS, SCULPTURE_READY, TOGGLE_CAMERA, emit } from './events';
+import { CAMERA_STATE, CHAPTER_CHANGE, SCULPTURE_FPS, SCULPTURE_READY, TOGGLE_CAMERA, emit, track } from './events';
 
 // Loads the Three.js engine only once the browser is idle, so text paints first.
 // Any failure (no WebGL, chunk error) just removes the art; the page keeps working.
@@ -25,7 +25,10 @@ export default function Sculpture() {
         engine = createSculpture(canvas, {
           onReady: (count) => emit(SCULPTURE_READY, { count }),
           onFps: (fps) => emit(SCULPTURE_FPS, { fps }),
-          onCamera: (on) => emit(CAMERA_STATE, { on }),
+          onCamera: (on) => {
+            emit(CAMERA_STATE, { on });
+            if (on) track('camera_on');
+          },
           onToast: (key) => toast(t(key)),
         });
         engine.setChapter(document.body.dataset.chapter || 'intro');
