@@ -1,14 +1,50 @@
 # Osmell Caicedo (oele.dev)
 
-> Software and AI engineer with Laravel at the core, indie maker and mentor. Shipping web products from Colombia since 2014, AI-augmented since 2023 (Claude Code with custom agents, Cursor). Main work is Livewire decomposition, Inertia/Vue migrations and modernizing legacy Laravel apps without changing how they behave. Available for remote contracts, Laravel performance audits and product collaborations.
+> Software and AI engineer with Laravel at the core, indie maker and mentor, based in Colombia and working remotely. Ten years in the Laravel ecosystem, shipping web products since 2014 and AI-augmented since 2023. Main work is modernizing legacy Laravel apps without changing how they behave: Livewire decomposition, Inertia and Vue migrations, test-forward refactoring. Available for remote contracts, legacy Laravel rescues, performance audits and product collaborations.
 
-The site is a single page in English at https://oele.dev and in Spanish at https://oele.dev/es. To book a 30-minute call or get in touch, email hola [at] oele [dot] dev. Replies usually come within 24 hours.
+The site is a single page in English at https://oele.dev and in Spanish at https://oele.dev/es, told in four chapters: Foundation (Laravel experience), Craft (how I work), Building (my own products) and Next (what I'm after). This file follows the same order. To book a 30-minute call or get in touch, email hola [at] oele [dot] dev. Replies usually come within 24 hours.
 
-- [Portfolio (English)](https://oele.dev): Four chapters. Foundation covers the Laravel experience, Craft how I work (performance and AI), Building my own products, and Next what I'm after and how to reach me
+- [Portfolio (English)](https://oele.dev): The four chapters, with screenshots of each product
 - [Portfolio (Spanish)](https://oele.dev/es): Same content in Spanish
-- [Resume](https://oele.dev/osmell-caicedo-cv.pdf): Full CV (PDF, two pages), organized in the same four chapters as the site
+- [Resume](https://oele.dev/osmell-caicedo-cv.pdf): Two-page CV in the same four chapters
 
-## My products
+## Foundation: Laravel experience
+
+Ten years on Laravel teams in Colombia, Malta and the US.
+
+- Level60 Consulting, Nashville TN (Sep 2024 to now), Senior Software Engineer, remote. Several Laravel apps on Blade and Livewire deploy from one codebase against a shared database, with Inertia as the target. I decompose oversized Livewire components into prop-driven, event-emitting boundaries, the shape a Vue component takes, so each refactor moves the app toward Inertia. I merged a React SPA and its separate API into one Inertia monolith, with Spatie laravel-data DTOs keeping PHP and TypeScript types in sync. I upgraded production from Laravel 8 to 12 with Rector, covering existing behavior with Pest browser tests on Playwright before each stage. I cut a real-time dashboard's heaviest SQL Server queries, over millions of rows, from 5 s to 900 ms with targeted queries, Redis and Laravel Octane. I introduced Filament as the admin layer on several projects.
+- EyeUniversal LLC, San José CA (Feb 2022 to Apr 2024), Senior Software Engineer, contract, remote. Lead developer on Run Layout Tool, built from scratch on Laravel, Inertia and Vue 3 and still in production. Validation, display state and pricing rules stay apart behind a props contract. Requirements came straight from the product manager, with no tech lead above me. I also shipped Laravel apps and WooCommerce, WordPress and Shopify stores for US clients.
+- Ovy.so, Colombia (Jul 2017 to May 2022), Lead Developer. Led the team from a native PHP monolith to Laravel and Blade, then Inertia v1 to v2 and Vue 2 to 3 with the Composition API, on Docker. Built an offline PWA covered in Laravel Dusk and the Google Workspace integration over OAuth2. Introduced GitLab Flow, Conventional Commits and continuous delivery to a team that had none.
+- SENA, Colombia (2021 to 2025), Software Development Instructor in the ADSO program. Taught the programme I graduated from, HTML and JavaScript through PHP, Laravel, Git and CI/CD, and mentored junior developers into their first codebases.
+
+Laravel work and open source:
+
+- [Run Layout Tool](https://runlayouttool.com): VILT app where contractors design rainwater gutter runs. It picks the parts that fit a given length and depth, draws the run as an interactive diagram and prices the quote. Generates technical PDFs with Puppeteer and emails them to the client.
+- QuickBooks and Hotmart billing automation (private client work): Hotmart webhooks go to queued jobs on Redis, monitored with Horizon. Jobs are idempotent and safe to retry, so a purchase is never invoiced twice. TALL stack with Filament as the operator panel.
+- [Google Workspace to Laravel integration](https://ovy.co): PHP package connecting Meet, Classroom, Calendar and Accounts to Laravel. Runs virtual classrooms in production with one-click Meet and passwordless sign-in.
+- [laravel-missing-index](https://github.com/oele-dev/laravel-missing-index): Laravel package that runs EXPLAIN on every query in development, flags full table scans and missing indexes, and prints the CREATE INDEX statement that fixes them. Runs only in local and testing environments by default.
+- [vilt-test](https://github.com/oele-dev/vilt-test): MIT starter kit for Vue, Inertia.js, Laravel and Tailwind, with Vite and PHPUnit configured.
+
+Education: associate's degree in Software Analysis and Development (ADSO), SENA, 2009 to 2011. Still learning through Laracasts and 39 Platzi certifications.
+
+## Craft: how I work
+
+- Measure first. EXPLAIN, indexes, targeted queries and caching come before any rewrite.
+- Test-forward refactoring. Cover existing behavior, then refactor legacy code in stages that each ship green.
+- Agentic workflow. Claude Code with custom agents for code review, security audits and testing, plus Cursor and MCP. Agents scaffold, do mechanical refactors and draft tests behind review gates. Architecture, auth and money-related logic stay human-reviewed.
+- AI inside products. Instructor Virtual grades coursework against evaluation rubrics with AI. mkdn turns documents into Markdown for LLMs.
+- [mkdn](https://github.com/oele-dev/mkdn): Node.js CLI and library, published on npm, that converts PDF, DOCX, Excel, HTML and images to Markdown via Cloudflare Workers AI. Zero runtime dependencies.
+
+Skills:
+
+- Backend: PHP 8.3, Laravel 8 to 12, Eloquent, Livewire 2 and 3, Filament, Octane, Horizon, queues and jobs, Redis
+- Frontend: Inertia v1 and v2, Vue 3 and 2, Composition API, Blade, React, Next.js, TypeScript, Alpine.js, Tailwind, Astro
+- Testing: PHPUnit, Pest, Vitest, Playwright, Laravel Dusk
+- Data: MySQL, SQL Server, PostgreSQL, Supabase, query optimization, indexing, caching
+- Delivery: Git, GitHub, GitLab Flow, Docker, Nginx, CI/CD, Rector, Conventional Commits
+- Architecture: multi-app and shared database, multi-tenant, application consolidation, REST, webhooks, OAuth2, API integrations (Google Workspace, QuickBooks, Hotmart, MikroTik, n8n), programmatic SEO
+
+## Building: my own products
 
 - [Ultti](https://ultti.co): A delivery business's whole catalog in one link. Customers build an order that lands on WhatsApp with products, address and payment method, ready to dispatch. No payment gateway and no commissions. Each business gets a branded catalog under {slug}.ultti.co and an operator panel, all on one Supabase backend with row-level security per business. Two businesses live.
 - [Instructor Virtual](https://instructorvirtual.co): Chrome extension for SENA instructors. It ranks pending coursework by urgency, flags forum questions unanswered for 24+ hours and lists deadlines for the next 7 days. The Pro plan grades coursework against SENA evaluation rubrics with AI; 1,200+ evidences analyzed so far.
@@ -16,29 +52,13 @@ The site is a single page in English at https://oele.dev and in Spanish at https
 - [VoiceMyGoals](https://voicemygoals.vercel.app): Turns written goals into affirmation audio files, with several AI voices and 432Hz background music.
 - [Corre Conmigo](https://correconmigo.app) (beta): Family and friends record short voice messages that play in a runner's headphones during a race, along with strategy reminders read out every kilometer. Installable web app for iPhone and Android, with distance from GPS or pace.
 - [FunAudios](https://funaudios.app) (beta): Funny audio clips you tap and send to WhatsApp as voice notes instead of stickers.
+- [Dr. Edicxon Gelviz](https://edicxongelviz.com) (lead agency client): Medical SEO and lead generation for an orthopedic surgeon in Cúcuta, Colombia, with landing pages for hip and knee replacement. Astro, Tailwind, JSON-LD Physician and MedicalProcedure schemas.
 
-## Client and open-source work
+## Next: what I'm after
 
-- [mkdn](https://github.com/oele-dev/mkdn): Node.js CLI and library, published on npm, that converts PDF, DOCX, Excel, HTML and images to Markdown via Cloudflare Workers AI. Zero runtime dependencies.
-- [laravel-missing-index](https://github.com/oele-dev/laravel-missing-index): Laravel package that runs EXPLAIN on every query in development, flags full table scans and missing indexes, and prints the CREATE INDEX statement that fixes them. Runs only in local and testing environments by default.
-- [vilt-test](https://github.com/oele-dev/vilt-test): MIT starter kit for Vue, Inertia.js, Laravel and Tailwind, with Vite and PHPUnit configured.
-- QuickBooks and Hotmart billing automation (private client work): Hotmart webhooks go to queued jobs on Redis, monitored with Horizon. Jobs are idempotent and safe to retry, so a purchase is never invoiced twice. TALL stack with Filament as the operator panel.
-- [Run Layout Tool](https://runlayouttool.com): VILT app where contractors design rainwater gutter runs. It picks the parts that fit a given length and depth, draws the run as an interactive diagram and prices the quote. Generates technical PDFs with Puppeteer and emails them to the client.
-- [Google Workspace to Laravel integration](https://ovy.co): PHP package connecting Meet, Classroom, Calendar and Accounts to Laravel. Runs virtual classrooms in production with one-click Meet and passwordless sign-in.
-- [Dr. Edicxon Gelviz](https://edicxongelviz.com): Medical SEO and lead generation for an orthopedic surgeon in Cúcuta, Colombia, with landing pages for hip and knee replacement. Astro, Tailwind, JSON-LD Physician and MedicalProcedure schemas.
+Remote contracts, legacy Laravel rescues and performance audits with teams that care about quality. New tools earn their place by what they change in the result. I split my time between client contracts and my own products, and I keep mentoring junior developers.
 
-## Experience
-
-Ten years on Laravel teams in Colombia, Malta and the US.
-
-- Level60 Consulting, Nashville TN (2024 to now), Senior Software Engineer. Several Laravel apps deploy from one codebase against a shared database. I split oversized Livewire components into prop-driven ones and moved business logic out of the views. I merged a React SPA and a separate Laravel API into one Inertia monolith, using Spatie laravel-data DTOs to keep PHP and TypeScript types in sync. I upgraded a production app from Laravel 8 to 12 with Rector, adding test coverage before each step. The heaviest SQL Server queries went from 5 s to 900 ms with targeted queries, Redis and Octane. Introduced Filament as the admin layer in several projects.
-- EyeUniversal LLC, San José CA (2022 to 2024), Senior Software Engineer (contract). Lead developer on Run Layout Tool, built from scratch on Laravel, Inertia and Vue 3 and still in production. Also shipped Laravel apps and WooCommerce, WordPress and Shopify stores for US clients.
-- SENA, Colombia (2021 to 2025), Software Development Instructor. Taught HTML, CSS, JS, PHP/Laravel, Git and CI/CD in the ADSO program.
-- Ovy.so, Colombia (2017 to 2022), Lead Developer. Migrated a vanilla PHP product to Laravel and Blade, then to Inertia (v1 to v2), and moved the frontend from Vue 2 to Vue 3. Turned it into an offline-capable PWA and built the Google Workspace integration (Meet, Calendar, Accounts).
-
-## About
-
-I build multi-tenant applications, Filament admin panels and API integrations (Google Workspace, QuickBooks, Hotmart, MikroTik, n8n) with async work on Redis queues monitored by Horizon. I also do programmatic SEO at scale. I split my time between client contracts and my own products (Ultti, Instructor Virtual, Malta Pharmacy Empire, mkdn), and I still mentor junior developers.
+"I build the boring parts well so the interesting parts get a chance."
 
 ## Optional
 
