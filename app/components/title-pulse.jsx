@@ -1,13 +1,9 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import { personalData } from '@/utils/data/personal-data';
-
-const EMAIL = personalData.emailParts.join('@');
-
 const ROTATIONS = {
-  en: ['👋 come back', '⏳ still shipping', EMAIL],
-  es: ['👋 vuelve', '⏳ aún shippeando', EMAIL],
+  en: ['👋 come back', '⏳ still shipping'],
+  es: ['👋 vuelve', '⏳ aún shippeando'],
 };
 
 export default function TitlePulse({ locale }) {

@@ -57,7 +57,7 @@ export default async function Home({ params: { locale } }) {
         lede={t('hero.lede')}
       >
         <div className="flex flex-wrap gap-2.5 mt-[30px]">
-          <ProtectedEmail fallbackHref="#next" className={BTN_PRIMARY}>
+          <ProtectedEmail fallbackHref="#next" subject="30-min call" className={BTN_PRIMARY}>
             {t('hero.ctaPrimary')}
           </ProtectedEmail>
           <a href={personalData.resume} target="_blank" rel="noopener noreferrer" className={BTN_GHOST}>
